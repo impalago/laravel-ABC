@@ -145,6 +145,16 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Development...
+         */
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+        /*
+         * My packages...
+         */
+        Vendor\Ytb\YtbServiceProvider::class,
+
     ],
 
     /*
@@ -193,6 +203,11 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Development...
+         */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
