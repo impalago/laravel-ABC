@@ -146,10 +146,10 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
-         * Development...
+         * Dev...
          */
         Barryvdh\Debugbar\ServiceProvider::class,
-
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         /*
          * My packages...
          */
@@ -205,7 +205,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         /*
-         * Development...
+         * Dev...
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
 

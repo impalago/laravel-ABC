@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Session;
 class GoogleLogin {
     protected $client;
 
+    /**
+     * @param \Google_Client $client
+     */
     public function __construct(\Google_Client $client)
     {
         $this->client = $client;
@@ -21,6 +24,9 @@ class GoogleLogin {
         $this->client->setAccessType('offline');
     }
 
+    /**
+     * @return bool
+     */
     public function isLoggedIn()
     {
         if (Session::has('token')) {
@@ -34,6 +40,10 @@ class GoogleLogin {
         return !$this->client->isAccessTokenExpired();
     }
 
+    /**
+     * @param $code
+     * @return string
+     */
     public function login($code)
     {
         $this->client->authenticate($code);
@@ -43,6 +53,9 @@ class GoogleLogin {
         return $token;
     }
 
+    /**
+     * @return string
+     */
     public function getLoginUrl()
     {
         $authUrl = $this->client->createAuthUrl();
