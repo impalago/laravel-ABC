@@ -3,7 +3,7 @@
 @section(config('ytb.sections.content'))
 
     <div class="control">
-        <a href="/ytb/logout" class="btn btn-danger logout"><i class="glyphicon glyphicon-off"></i></a>
+        <a href="{{ route('ytb.logout') }}" class="btn btn-danger logout"><i class="glyphicon glyphicon-off"></i></a>
     </div>
 
     <div class="page-header">
@@ -26,7 +26,6 @@
                 <div class="panel-footer">
                     <span><i class="glyphicon glyphicon-thumbs-up"></i> {{ $video["statistics"]["likeCount"] }}</span>
                     <span><i class="glyphicon glyphicon-thumbs-down"></i> {{ $video["statistics"]["dislikeCount"] }}</span>
-                    <span><i class="glyphicon glyphicon-heart"></i> {{ $video["statistics"]["favoriteCount"] }}</span>
                     <span><i class="glyphicon glyphicon-bullhorn"></i> {{ $video["statistics"]["commentCount"] }}</span>
                 </div>
             </div>

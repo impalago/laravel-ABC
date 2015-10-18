@@ -21,7 +21,7 @@ class YoutubeController extends Controller {
     public function index (\Vendor\Ytb\Services\GoogleLogin $gl){
 
         if(!$gl->isLoggedIn()) {
-            return redirect('ytb/login');
+            return redirect(route('ytb.login'));
         }
 
         $options = ['chart' => 'mostPopular', 'maxResults' => 15, 'videoCategoryId' => '10' ]; // 'regionCode' => 'RU'
@@ -45,7 +45,7 @@ class YoutubeController extends Controller {
     public function getVideo(\Vendor\Ytb\Services\GoogleLogin $gl, $id) {
 
         if(!$gl->isLoggedIn()) {
-            return redirect('ytb/login');
+            return redirect(route('ytb.login'));
         }
 
         $youtube = \App::make('youtube');
@@ -53,10 +53,10 @@ class YoutubeController extends Controller {
         // Getting information about a video
         $optionsVideo = ['maxResults' => 1, 'id' => $id];
         $video = $youtube->videos->listVideos('id, snippet, player, contentDetails, statistics, status', $optionsVideo);
-
         //dump($video);
+
         if(count($video->getItems()) == 0){
-            return redirect('/ytb');
+            return redirect(route('ytb.index'));
         }
         // Getting comments to the current video
         $optionsComment = ['videoId' => $id, 'textFormat' => 'plainText'];
@@ -64,7 +64,6 @@ class YoutubeController extends Controller {
         //dump($comment);
 
         return view(config('ytb.views.video'), ['video' => $video[0], 'comments' => $comment['items']]);
-
     }
 
 }

@@ -16,7 +16,7 @@ class YtbController extends Controller {
     public function index(\Vendor\Ytb\Services\GoogleLogin $gl) {
 
         if($gl->isLoggedIn()) {
-            return redirect('ytb');
+            return redirect(route('ytb.index'));
         }
 
         $data['loginUrl'] = $gl->getLoginUrl();
@@ -35,15 +35,19 @@ class YtbController extends Controller {
         if(Input::has('code')) {
             $code = Input::get('code');
             $gl->login($code);
-            return redirect('ytb');
+            return redirect(route('ytb.index'));
         } else {
             throw new InvalidArgumentException('The code attribute is missing');
         }
     }
 
+    /**
+     * @param \Vendor\Ytb\Services\GoogleLogin $gl
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function logout(\Vendor\Ytb\Services\GoogleLogin $gl) {
         $gl->logout();
-        return redirect('/ytb/login');
+        return redirect(route('ytb.login'));
     }
 
 }
