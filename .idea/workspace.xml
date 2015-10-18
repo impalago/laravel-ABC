@@ -2,13 +2,553 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c75ccf24-efea-4134-bb8b-a39c6c1720bf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/Material-Design-Icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/Material-Design-Icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/Material-Design-Icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/Material-Design-Icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/Material-Design-Icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/Material-Design-Icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/RobotoDraftBold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/RobotoDraftBold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/RobotoDraftBold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/RobotoDraftBold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/RobotoDraftItalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/RobotoDraftItalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/RobotoDraftItalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/RobotoDraftItalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/RobotoDraftMedium.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/RobotoDraftMedium.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/RobotoDraftMedium.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/RobotoDraftMedium.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/RobotoDraftRegular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/RobotoDraftRegular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/RobotoDraftRegular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/RobotoDraftRegular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/demo/imgs/banner.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/demo/imgs/download.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/demo/imgs/gittip-button.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/demo/imgs/gittip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/demo/imgs/issue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/demo/imgs/issues-button.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/demo/imgs/palette.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/.bowerrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/.jscsrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/grunt/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/test/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/example/.meteor/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/desandro-matches-selector/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-matches-selector/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/doc-ready/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/.versions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/AUTHORS.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/CONTRIBUTING.mdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/data/Data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/EventEmitter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/EventEmitter.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/MIT-LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/fonts/Material-Design-Icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/fonts/Material-Design-Icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/desandro-matches-selector/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/node_modules/eventie/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/node_modules/desandro-get-style-property/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-get-style-property/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-matches-selector/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/doc-ready/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/eventie/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/README.mdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/effects/Tween.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/UNLICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_alerts.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_alerts.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_animations.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_buttons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_buttons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_cards.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_cards.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_checkboxes.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_checkboxes.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_colors.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_dialogs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_dividers.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/manipulation/_evalUrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_icons-material-design.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_icons-material-design.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_icons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_icons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_inputs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_inputs.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_labels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_lists.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_lists.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_mixins-fullpalette.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_navbar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_navbar.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_panels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_plugin-dropdownjs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_plugin-nouislider.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_plugin-nouislider.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_plugin-selectize.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_plugin-snackbarjs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_plugin-snackbarjs.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_popups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_popups.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_progress.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_progress.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_radios.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_radios.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_shadows.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_shadows.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_tabs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_tabs.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_togglebutton.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/_welljumbo.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/_welljumbo.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/data/accepts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/core/access.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/add-items.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/add-items.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/addGetHookIf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/affix.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/event/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/alert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/alerts.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/alerts.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/event/alias.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/exports/amd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/effects/animatedSelector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/docs/api.dust" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/docs/api.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/arr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/attributes/attr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/attributes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/background-variant.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/badges.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/unit/basic-layout.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/basic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/basics.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/example/client/bmd.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/example/client/bmd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/example/client/bmd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/bootstrap-elements.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/css/bootstrap-theme.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/css/bootstrap-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/css/bootstrap.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/bootstrap.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/border-radius.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/bottom-up.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/desandro-matches-selector/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/node_modules/eventie/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/node_modules/desandro-get-style-property/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-get-style-property/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-matches-selector/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/doc-ready/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/eventie/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/breadcrumbs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/examples/browserify/browserify.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/grunt/bs-commonjs-generator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/grunt/bs-glyphicons-data-generator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/grunt/bs-lessdoc-parser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/grunt/bs-raw-files-generator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/button-groups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/button.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/buttons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/buttons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/callbacks.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/carousel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/carousel.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/examples/cells-by-row.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/examples/cells-by-row.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/center-block.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/changelog.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/docs/changelog.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/class2type.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/attributes/classes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/clearfix.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/close.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/code.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/collapse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/component-animations.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/desandro-matches-selector/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/node_modules/eventie/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/node_modules/desandro-get-style-property/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-get-style-property/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-matches-selector/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/doc-ready/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/eventie/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/concat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/grunt/configBridge.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/container-size.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/create.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/var/cssExpand.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/curCSS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/data/var/data_priv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/data/var/data_user.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/declarative.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/defaultDisplay.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/defaults.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/deferred.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/queue/delay.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/deprecated.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/destroy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/dimensions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/tools/dist.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/doc-ready.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/doc-ready/doc-ready.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/tools/doc.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/dropdowns.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/effects.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/element-sizing.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/unit/element-sizing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/test/data/empty.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/unit/empty.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/event.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/node_modules/eventie/eventie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/eventie/eventie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/examples/examples.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/test/unit/extending.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/filter-find.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/traversing/findFilter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/fit-width.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/unit/fit-width.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/fluid.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/forms.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/forms.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/get-measurements.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/get-size.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/node_modules/desandro-get-style-property/get-style-property.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-get-style-property/get-style-property.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/var/getStyles.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/exports/global.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/glyphicons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/gradients.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/grid-framework.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/grid.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/grid.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/docs/guide.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/unit/gutter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/hasOwn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/helpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/helpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/hiddenVisibleSelectors.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/hide-reveal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/hide-text.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/test/iframe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/test/iframe3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/test/iframe4.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/image.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/test/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/test/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/doc-ready/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/tests/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/browserify/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/require-js/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/indexOf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/init.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/core/init.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/input-groups.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/intro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/var/isHidden.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/examples/item-methods.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/item-on-transition-end.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/item.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/docs/item.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/jquery-plugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/jquery.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/dist/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/test/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/dist/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/dist/jquery.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/ajax/jsonp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/jumbotron.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/labels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/labels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/layout.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/list-group.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/list-group.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/ajax/load.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/examples/browserify/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/examples/requirejs/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/browserify/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/require-js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/manipulation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/masonry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/dist/masonry.pkgd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/dist/masonry.pkgd.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/desandro-matches-selector/matches-selector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-matches-selector/matches-selector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/material-fullpalette.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/material-fullpalette.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/material-fullpalette.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/material-fullpalette.min.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/material-fullpalette.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/material-wfont.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/material.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/material.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/js/material.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/scripts/material.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/material.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/material.min.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/material.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/js/material.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/js/material.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/material.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/test/materialSpec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/media.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/test/data/mixed_sort.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/modals.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/nav-divider.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/nav-vertical-align.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/navbar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/navs.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/ajax/var/nonce.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/normalize.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/docs/notes.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/dist/js/npm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/offset.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/offset.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/opacity.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/options.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/origin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/outlayer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/docs/outlayer.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/outro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/package-fullpalette.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/package-noglyph.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/package-noicons.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/package.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/package.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/desandro-matches-selector/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/node_modules/eventie/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/node_modules/desandro-get-style-property/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-get-style-property/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-matches-selector/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/doc-ready/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/eventie/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/example/.meteor/packages" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/pager.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/pagination.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/pagination.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/panels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/panels.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/core/parseHTML.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/ajax/parseJSON.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/ajax/parseXML.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/percent-position.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/unit/pixel-rounding.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/pnum.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/popover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/popovers.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/prepend.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/print.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/progress-bar.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/progress-bars.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/attributes/prop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/push.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/queue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/manipulation/var/rcheckableType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/core/ready.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/example/.meteor/release" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/remove.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/docs/render.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/examples/require-js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/doc-ready/examples/require-js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/examples/require-js.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/doc-ready/examples/require-js.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/examples/requirejs/requirejs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/reset-filter.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/reset-text.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/resize.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/responsive-embed.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/responsive-utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/responsive-visibility.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/right-to-left.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/ripples.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/ripples.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/js/ripples.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/scripts/ripples.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/ripples.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/ripples.min.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/ripples.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/js/ripples.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/js/ripples.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/sass/ripples.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/test/ripplesSpec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/var/rmargin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/traversing/var/rneedsContext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/rnotwhite.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/var/rnumnonpx.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/roboto.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/roboto.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/less/roboto.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/roboto.min.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/css/roboto.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/ajax/var/rquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/core/var/rsingleTag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/example/run.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/example/run.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/sandbox.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/grunt/sauce_browsers.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/scaffolding.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/ajax/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/scrollspy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/selector-native.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/selector-sizzle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/selector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/test/unit/selector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/serialize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/tools/server-python2.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/tools/server.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/size.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/dist/sizzle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/dist/sizzle.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/dist/sizzle.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/slice.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/stamp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/unit/stamp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/sandbox/stamps.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/strundefined.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/attributes/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/event/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/manipulation/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/css/swap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/tab-focus.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/table-row.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/tables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/test-noicons.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/dist/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/doc-ready/node_modules/eventie/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/eventie/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/meteor/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/test/data/testinit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/test/tests.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/tests.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/tests.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/desandro-matches-selector/tests.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-matches-selector/tests.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/node_modules/desandro-matches-selector/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/get-size/test/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/desandro-matches-selector/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/node_modules/wolfy87-eventemitter/tests/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/text-emphasis.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/text-overflow.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/theme.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/thumbnails.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/var/toString.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/examples/toggler.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/tooltip.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/outlayer/test/unit/transition-duration.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/js/transition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/traversing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/type.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/sizzle/test/unit/utilities.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/utilities.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/node_modules/fizzy-ui-utils/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/attributes/val.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/mixins/vendor-prefixes.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/bootstrap/less/wells.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/wrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/bootstrap-material/node_modules/jquery/src/ajax/xhr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/libs/masonry-layout/test/unit/zero-column-width.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/Vendor/Ytb/src/Services/GoogleLogin.php" afterPath="$PROJECT_DIR$/packages/Vendor/Ytb/src/Services/GoogleLogin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YtbController.php" afterPath="$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YtbController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/Vendor/Ytb/src/YtbServiceProvider.php" afterPath="$PROJECT_DIR$/packages/Vendor/Ytb/src/YtbServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/layout/default.blade.php" afterPath="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/layout/default.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/list.blade.php" afterPath="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/login.blade.php" afterPath="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/routes.php" afterPath="$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/Vendor/Ytb/config/ytb.php" afterPath="$PROJECT_DIR$/packages/Vendor/Ytb/config/ytb.php" />
     </list>
     <ignored path="lar-pack.loc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,21 +573,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/list.blade.php">
+      <file leaf-file-name="ytb.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/config/ytb.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31634447" vertical-offset="0" max-vertical-offset="569">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state vertical-scroll-proportion="-12.307693" vertical-offset="0" max-vertical-offset="480">
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ytb.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/config/ytb.php">
+      <file leaf-file-name="video.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/video.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.307693" vertical-offset="0" max-vertical-offset="480">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state vertical-scroll-proportion="-20.346153" vertical-offset="651" max-vertical-offset="1400">
+              <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9013158" vertical-offset="512" max-vertical-offset="1200">
+              <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/list.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.26923" vertical-offset="311" max-vertical-offset="900">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,32 +616,10 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="420">
-              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+            <state vertical-scroll-proportion="-10.769231" vertical-offset="0" max-vertical-offset="460">
+              <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
               <folding>
                 <element signature="e#7#183#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoogleLogin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Services/GoogleLogin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.769231" vertical-offset="118" max-vertical-offset="1420">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="YtbController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YtbController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.153846" vertical-offset="738" max-vertical-offset="1320">
-              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="15" />
-              <folding>
-                <element signature="e#47#83#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,8 +628,42 @@
       <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6153846" vertical-offset="0" max-vertical-offset="320">
-              <caret line="6" column="79" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="79" />
+            <state vertical-scroll-proportion="-3.8461537" vertical-offset="0" max-vertical-offset="380">
+              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YtbController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YtbController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.692307" vertical-offset="518" max-vertical-offset="1100">
+              <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+              <folding>
+                <element signature="e#47#83#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YoutubeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YoutubeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.653846" vertical-offset="951" max-vertical-offset="1520">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding>
+                <element signature="e#47#83#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/layout/default.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.461538" vertical-offset="0" max-vertical-offset="580">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,18 +680,22 @@
         <option value="$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YtbControllers.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/layout/list.blade.php" />
-        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/layout/default.blade.php" />
         <option value="$PROJECT_DIR$/packages/Vendor/Ytb/composer.json" />
-        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/login.blade.php" />
-        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/routes.php" />
         <option value="$PROJECT_DIR$/packages/Vendor/Ytb/config/google.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/src/Services/GoogleLogin.php" />
-        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/config/ytb.php" />
         <option value="$PROJECT_DIR$/packages/Vendor/Ytb/src/YoutubeServiceProvider.php" />
         <option value="$PROJECT_DIR$/packages/Vendor/Ytb/src/YtbServiceProvider.php" />
+        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/config/ytb.php" />
+        <option value="$PROJECT_DIR$/public/js/common.js" />
+        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/routes.php" />
+        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/src/Services/GoogleLogin.php" />
         <option value="$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YtbController.php" />
+        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/layout/default.blade.php" />
         <option value="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/list.blade.php" />
+        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/login.blade.php" />
+        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/video.blade.php" />
+        <option value="$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YoutubeController.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -161,7 +737,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -177,6 +752,56 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lar-pack.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lar-pack.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lar-pack.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -228,8 +853,193 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lar-pack.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ytb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lar-pack.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ytb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lar-pack.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ytb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lar-pack.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ytb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lar-pack.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ytb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lar-pack.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="localhost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ytb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -238,6 +1048,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\localhost\public\libs" />
       <recent name="C:\OpenServer\domains\lar-pack.loc\packages\Vendor\Ytb\resources\view" />
       <recent name="C:\OpenServer\domains\lar-pack.loc\public\libs" />
     </key>
@@ -257,6 +1068,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -264,9 +1078,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -286,7 +1097,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -306,9 +1117,9 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -333,6 +1144,58 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="520">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/config/ytb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="480">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="420">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="e#7#183#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Services/GoogleLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="1420">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YtbController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="738" max-vertical-offset="1320">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="15" />
+          <folding>
+            <element signature="e#47#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="320">
+          <caret line="6" column="79" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/YtbServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="740">
@@ -347,9 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="260">
           <caret line="6" column="48" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="48" />
-          <folding>
-            <element signature="e#7#188#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -436,18 +1296,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/layout/default.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5154639" vertical-offset="0" max-vertical-offset="582">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41237113" vertical-offset="0" max-vertical-offset="582">
           <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -455,7 +1307,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03780069" vertical-offset="2718" max-vertical-offset="4400">
           <caret line="137" column="19" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -463,9 +1314,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44673538" vertical-offset="0" max-vertical-offset="582">
           <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="48" />
-          <folding>
-            <element signature="e#7#188#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -479,38 +1327,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/public/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="420">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding>
-            <element signature="e#7#183#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YtbController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.153846" vertical-offset="738" max-vertical-offset="1320">
-          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="15" />
-          <folding>
-            <element signature="e#47#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6153846" vertical-offset="0" max-vertical-offset="320">
-          <caret line="6" column="79" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Services/GoogleLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.769231" vertical-offset="118" max-vertical-offset="1420">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
+          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -518,15 +1338,85 @@
     <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/config/ytb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.307693" vertical-offset="0" max-vertical-offset="480">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/layout/default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.461538" vertical-offset="0" max-vertical-offset="580">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.769231" vertical-offset="0" max-vertical-offset="460">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <folding>
+            <element signature="e#7#183#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Services/GoogleLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3436426" vertical-offset="438" max-vertical-offset="1600">
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8461537" vertical-offset="0" max-vertical-offset="380">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/video.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.346153" vertical-offset="651" max-vertical-offset="1400">
+          <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YtbController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.692307" vertical-offset="518" max-vertical-offset="1100">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+          <folding>
+            <element signature="e#47#83#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/resources/view/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31634447" vertical-offset="0" max-vertical-offset="569">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state vertical-scroll-proportion="-17.26923" vertical-offset="311" max-vertical-offset="900">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/Vendor/Ytb/src/Http/Controllers/YoutubeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.653846" vertical-offset="951" max-vertical-offset="1520">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding>
+            <element signature="e#47#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9013158" vertical-offset="512" max-vertical-offset="1200">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
           <folding />
         </state>
       </provider>

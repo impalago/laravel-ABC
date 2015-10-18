@@ -5,7 +5,7 @@ return [
         'layout' => 'ytb::layout.default',
         'login' => 'ytb::login',
         'list' => 'ytb::list',
-        'detail' => 'ytb::detail'
+        'video' => 'ytb::video'
     ],
     'sections' => [
         'content'   => 'content',

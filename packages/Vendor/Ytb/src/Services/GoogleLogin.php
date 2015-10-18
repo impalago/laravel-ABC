@@ -20,6 +20,7 @@ class GoogleLogin {
         $this->client->setRedirectUri(config('app.url')."/ytb/callbackLogin");
         $this->client->setScopes([
             'https://www.googleapis.com/auth/youtube',
+            'https://www.googleapis.com/auth/youtube.force-ssl'
         ]);
         $this->client->setAccessType('offline');
     }
@@ -51,6 +52,14 @@ class GoogleLogin {
         Session::put('token', $token);
 
         return $token;
+    }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function logout()
+    {
+        Session::forget('token');
     }
 
     /**

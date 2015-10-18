@@ -20,7 +20,6 @@ class YtbController extends Controller {
         }
 
         $data['loginUrl'] = $gl->getLoginUrl();
-
         return view(config('ytb.views.login'), $data);
     }
 
@@ -36,25 +35,15 @@ class YtbController extends Controller {
         if(Input::has('code')) {
             $code = Input::get('code');
             $gl->login($code);
+            return redirect('ytb');
         } else {
             throw new InvalidArgumentException('The code attribute is missing');
         }
     }
 
-    /**
-     * @return \Illuminate\View\View
-     */
-    public function getListVideo (){
-
-        $options = ['chart' => 'mostPopular', 'maxResults' => 20];
-        if(Input::has('page')) {
-            $options['pageToken'] = Input::get('page');
-        }
-
-        $youtube = \App::make('youtube');
-        $videos = $youtube->videos->listVideos('id, snippet', $options);
-
-        return view(config('ytb.views.list'), ['videos' => $videos]);
+    public function logout(\Vendor\Ytb\Services\GoogleLogin $gl) {
+        $gl->logout();
+        return redirect('/ytb/login');
     }
 
 }
