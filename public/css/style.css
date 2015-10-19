@@ -53,3 +53,7 @@
 .page-header {
     margin-top: 55px;
 }
+
+.video-description div {
+    white-space: pre-wrap;
+}
