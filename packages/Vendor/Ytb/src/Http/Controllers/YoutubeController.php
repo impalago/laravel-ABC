@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Input;
  * Class for working with data Youtube
  *
  */
-
-class YoutubeController extends Controller {
+class YoutubeController extends Controller
+{
 
     /**
      * A method of retrieving the list of videos
@@ -18,20 +18,20 @@ class YoutubeController extends Controller {
      * @param \Vendor\Ytb\Services\GoogleLogin $gl
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function index (\Vendor\Ytb\Services\GoogleLogin $gl){
+    public function index(\Vendor\Ytb\Services\GoogleLogin $gl)
+    {
 
-        if(!$gl->isLoggedIn()) {
+        if (!$gl->isLoggedIn()) {
             return redirect(route('ytb.login'));
         }
 
-        $options = ['chart' => 'mostPopular', 'maxResults' => 15, 'videoCategoryId' => '10' ]; // 'regionCode' => 'RU'
-        if(Input::has('page')) {
+        $options = ['chart' => 'mostPopular', 'maxResults' => 15, 'videoCategoryId' => '10'];
+        if (Input::has('page')) {
             $options['pageToken'] = Input::get('page');
         }
 
         $youtube = \App::make('youtube');
         $videos = $youtube->videos->listVideos('id, snippet, statistics', $options);
-        //dump($videos);
         return view(config('ytb.views.list'), ['videos' => $videos]);
     }
 
@@ -42,9 +42,10 @@ class YoutubeController extends Controller {
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function getVideo(\Vendor\Ytb\Services\GoogleLogin $gl, $id) {
+    public function getVideo(\Vendor\Ytb\Services\GoogleLogin $gl, $id)
+    {
 
-        if(!$gl->isLoggedIn()) {
+        if (!$gl->isLoggedIn()) {
             return redirect(route('ytb.login'));
         }
 
@@ -53,15 +54,18 @@ class YoutubeController extends Controller {
         // Getting information about a video
         $optionsVideo = ['maxResults' => 1, 'id' => $id];
         $video = $youtube->videos->listVideos('id, snippet, player, contentDetails, statistics, status', $optionsVideo);
-        //dump($video);
 
-        if(count($video->getItems()) == 0){
+        if (count($video->getItems()) == 0) {
             return redirect(route('ytb.index'));
         }
+
         // Getting comments to the current video
-        $optionsComment = ['videoId' => $id, 'textFormat' => 'plainText'];
-        $comment = $youtube->commentThreads->listCommentThreads('snippet', $optionsComment);
-        //dump($comment);
+        if ($video[0]["statistics"]["commentCount"] != 0) {
+            $optionsComment = ['videoId' => $id, 'textFormat' => 'plainText'];
+            $comment = $youtube->commentThreads->listCommentThreads('snippet', $optionsComment);
+        } else {
+            $comment['items'] = [];
+        }
 
         return view(config('ytb.views.video'), ['video' => $video[0], 'comments' => $comment['items']]);
     }

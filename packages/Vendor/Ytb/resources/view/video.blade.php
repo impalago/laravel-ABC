@@ -46,7 +46,7 @@
             @if(count($comments) != 0)
                 @foreach($comments as $comment)
                     <div class="media">
-                        <a class="pull-left" href="{{ $comment['snippet']['topLevelComment']['snippet']['authorChannelUrl'] }}">
+                        <a class="pull-left" href="{{ $comment['snippet']['topLevelComment']['snippet']['authorChannelUrl'] }}" target="_blank">
                             <img class="media-object" src="{{ $comment['snippet']['topLevelComment']['snippet']['authorProfileImageUrl'] }}" alt="{{ $comment['snippet']['topLevelComment']['snippet']['authorDisplayName'] }}">
                         </a>
                         <div class="media-body">

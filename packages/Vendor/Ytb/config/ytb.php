@@ -8,7 +8,7 @@ return [
         'video' => 'ytb::video'
     ],
     'sections' => [
-        'content'   => 'content',
+        'content' => 'content',
     ],
     'api' => [
         'app_name' => 'Ytb',
