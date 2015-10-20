@@ -4,6 +4,7 @@ namespace Vendor\Ytb\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use Vendor\Ytb\Services\GoogleLogin;
 
 /**
  * Class for working with data Youtube
@@ -18,7 +19,7 @@ class YoutubeController extends Controller
      * @param \Vendor\Ytb\Services\GoogleLogin $gl
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function index(\Vendor\Ytb\Services\GoogleLogin $gl)
+    public function index(GoogleLogin $gl)
     {
 
         if (!$gl->isLoggedIn()) {
@@ -42,7 +43,7 @@ class YoutubeController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function getVideo(\Vendor\Ytb\Services\GoogleLogin $gl, $id)
+    public function getVideo(GoogleLogin $gl, $id)
     {
 
         if (!$gl->isLoggedIn()) {
@@ -52,22 +53,27 @@ class YoutubeController extends Controller
         $youtube = \App::make('youtube');
 
         // Getting information about a video
-        $optionsVideo = ['maxResults' => 1, 'id' => $id];
-        $video = $youtube->videos->listVideos('id, snippet, player, contentDetails, statistics, status', $optionsVideo);
+        $video = $youtube->videos->listVideos('id, snippet, player, contentDetails, statistics, status',
+        ['maxResults' => 1, 'id' => $id]);
 
-        if (count($video->getItems()) == 0) {
+        if (!count($video->getItems())) {
             return redirect(route('ytb.index'));
         }
 
+        $video = $video[0];
+        $listComments = [];
+
         // Getting comments to the current video
-        if ($video[0]["statistics"]["commentCount"] != 0) {
-            $optionsComment = ['videoId' => $id, 'textFormat' => 'plainText'];
-            $comment = $youtube->commentThreads->listCommentThreads('snippet', $optionsComment);
-        } else {
-            $comment['items'] = [];
+        if ($video["statistics"]["commentCount"]) {
+            $comments = $youtube->commentThreads->listCommentThreads('snippet',
+            ['videoId' => $id, 'textFormat' => 'plainText']);
+
+            $listComments = array_map(function($comment) {
+                return $comment['snippet']['topLevelComment']['snippet'];
+            }, $comments['modelData']['items']);
         }
 
-        return view(config('ytb.views.video'), ['video' => $video[0], 'comments' => $comment['items']]);
+        return view(config('ytb.views.video'), ['video' => $video, 'comments' => $listComments]);
     }
 
 }

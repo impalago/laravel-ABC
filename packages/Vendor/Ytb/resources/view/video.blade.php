@@ -43,15 +43,15 @@
 
             <h2>Last comments</h2>
 
-            @if(count($comments) != 0)
+            @if(count($comments))
                 @foreach($comments as $comment)
                     <div class="media">
-                        <a class="pull-left" href="{{ $comment['snippet']['topLevelComment']['snippet']['authorChannelUrl'] }}" target="_blank">
-                            <img class="media-object" src="{{ $comment['snippet']['topLevelComment']['snippet']['authorProfileImageUrl'] }}" alt="{{ $comment['snippet']['topLevelComment']['snippet']['authorDisplayName'] }}">
+                        <a class="pull-left" href="{{ $comment['authorChannelUrl'] }}" target="_blank">
+                            <img class="media-object" src="{{ $comment['authorProfileImageUrl'] }}" alt="{{ $comment['authorDisplayName'] }}">
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading">{{ $comment['snippet']['topLevelComment']['snippet']['authorDisplayName'] }}</h4>
-                            {{ $comment['snippet']['topLevelComment']['snippet']['textDisplay'] }}
+                            <h4 class="media-heading">{{ $comment['authorDisplayName'] }}</h4>
+                            {{ $comment['textDisplay'] }}
                         </div>
                     </div>
                 @endforeach

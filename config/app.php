@@ -148,7 +148,7 @@ return [
         /*
          * Dev...
          */
-        //Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         /*
          * My packages...
@@ -207,7 +207,7 @@ return [
         /*
          * Dev...
          */
-        //'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
