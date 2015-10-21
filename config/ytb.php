@@ -2,7 +2,7 @@
 
 return [
     'views' => [
-        'layout' => 'ytb::layout.default',
+        'layout' => 'layouts.layout-panel',
         'login' => 'ytb::login',
         'list' => 'ytb::list',
         'video' => 'ytb::video'

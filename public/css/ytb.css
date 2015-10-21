@@ -57,3 +57,7 @@
 .video-description div {
     white-space: pre-wrap;
 }
+
+.grid-item h3 a:hover {
+    text-decoration: none !important;
+}

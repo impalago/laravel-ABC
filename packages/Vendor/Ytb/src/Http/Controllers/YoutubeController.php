@@ -26,13 +26,15 @@ class YoutubeController extends Controller
             return redirect(route('ytb.login'));
         }
 
-        $options = ['chart' => 'mostPopular', 'maxResults' => 15, 'videoCategoryId' => '10'];
+        //$options = ['chart' => 'mostPopular', 'maxResults' => 15, 'videoCategoryId' => '10'];
+        $options = ['playlistId' => 'PLlqZM4covn1GeiFmvbi8YppviPVUH2Q_9', 'maxResults' => '12'];
         if (Input::has('page')) {
             $options['pageToken'] = Input::get('page');
         }
 
         $youtube = \App::make('youtube');
-        $videos = $youtube->videos->listVideos('id, snippet, statistics', $options);
+        //$videos = $youtube->videos->listVideos('id, snippet, statistics', $options);
+        $videos = $youtube->playlistItems->listPlaylistItems('id, snippet', $options);
         return view(config('ytb.views.list'), ['videos' => $videos]);
     }
 

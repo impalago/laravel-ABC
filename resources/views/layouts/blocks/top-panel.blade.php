@@ -12,7 +12,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
+                <li><a href="{{ route('ytb.index') }}">YouTube</a></li>
                 <li><a href="{{ route('users.index') }}">Users</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="{{ route('auth.logout') }}">Logout</a></li>
