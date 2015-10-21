@@ -42,24 +42,31 @@ $(document).on('click', '.deleteUser', function (e) {
     var $self = $(this)
     var userId = $self.data('user-id');
 
-    if (confirm('Are you sure?')) {
 
-        /**
-         * Ajax Request
-         *
-         * @param The current element
-         * @param Callback
-         * @param dataType
-         * @param data
-         **/
-        commonProperties.queryAjax($self, function (data) {
-            $self.closest('tr').fadeOut();
-            $.jGrowl(data, {life: 3000});
-        }, 'html', {
-            userId: userId
-        });
+    $.confirm({
+        title: 'Are you sure?',
+        content: 'The user will be deleted without possibility to restore.',
+        confirm: function(){
 
-    }
+            /**
+             * Ajax Request
+             *
+             * @param The current element
+             * @param Callback
+             * @param dataType
+             * @param data
+             **/
+            commonProperties.queryAjax($self, function (data) {
+                $self.closest('tr').fadeOut();
+                $.jGrowl(data, {life: 3000});
+            }, 'html', {
+                userId: userId
+            });
+
+        }
+    });
+
+
 });
 
 

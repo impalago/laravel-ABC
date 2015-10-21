@@ -1,0 +1,19 @@
+{
+  "name": "Laravel Pack",
+  "authors": [
+    "Ivan Kolesnikov <impalago@yandex.ru>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-confirm2": "craftpip/jquery-confirm#~1.7.9"
+  }
+}
