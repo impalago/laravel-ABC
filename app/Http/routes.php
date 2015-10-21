@@ -18,14 +18,20 @@ Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController
 
 Route::group(['middleware' => 'auth'], function() {
 
+
+    // Users
+    Route::get('users', ['as' => 'users.index', 'uses' => 'Users\UsersController@index']);
+
     // Add user...
-    Route::get('auth/register', 'Auth\AuthController@getRegister');
-    Route::post('auth/register', 'Auth\AuthController@postRegister');
+    Route::get('users/create', ['as' => 'users.create', 'uses' => 'Auth\AuthController@getRegister']);
+    Route::post('users/create', 'Auth\AuthController@postRegister');
 
-
+    // Edit user...
+    Route::post('users/edit-status', ['as' => 'users.edit-status', 'uses' => 'Users\UsersController@editStatusAjax']);
+    Route::any('users/destroy', ['as' => 'users.destroy', 'uses' => 'Users\UsersController@destroy']);
 
     Route::get('/', function () {
-        return view('control-panel.index');
+        return view('control-panel/dashboard.index');
     });
 
 });

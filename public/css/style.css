@@ -1,3 +1,10 @@
+body {
+    background: url(../img/body-bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+
+}
+
 /* Log In Style */
 
 .form-signin
@@ -41,7 +48,7 @@
     border-top-right-radius: 0;
 }
 
-.form-control:focus {
+.content .form-control:focus {
     height: auto !important;
 }
 
@@ -123,7 +130,7 @@ body {
 @media (min-width: 768px) {
     .sidebar {
         position: fixed;
-        top: 51px;
+        top: 60px;
         bottom: 0;
         left: 0;
         z-index: 1000;
@@ -189,4 +196,61 @@ body {
     border-radius: 50%;
 }
 
+.top-panel {
+    background-color: rgba(0, 89, 150, 0.75) !important;
+}
 /* End Dashboarg */
+
+.add-user {
+    font-size: 20px;
+    margin-top: 12px;
+}
+
+.add-user i {
+    position: relative;
+    top: 2px;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.pl0 {
+    padding-left: 0;
+}
+
+.user-create {
+    padding: 20px;
+}
+
+.user-create .form-group {
+    margin-bottom: 20px;
+}
+
+.jGrowl-notification {
+    background-color: #FF8A33;
+    opacity: 0.95;
+    width: 280px;
+    padding: 20px 10px;
+}
+
+.jGrowl {
+    font-family: RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 15px;
+}
+
+.table {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.table tbody td {
+    vertical-align: middle !important;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #E9E9E9;
+}
+
+.user-action i {
+    cursor: pointer;
+}

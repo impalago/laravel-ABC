@@ -1,0 +1,52 @@
+{
+  "name": "jgrowl",
+  "version": "1.4.3",
+  "author": {
+    "name": "Stan Lemon",
+    "email": "stosh1985@gmail.com",
+    "url": "http://stanlemon.net"
+  },
+  "src": "jquery.jgrowl.js",
+  "style": "jquery.jgrowl.css",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/stanlemon/jGrowl.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-less": "~0.11.0",
+    "grunt-contrib-watch": "~0.6.1"
+  },
+  "gitHead": "04af24ec8264e337737c4ff18b5710c16315152c",
+  "description": "jGrowl is a jQuery plugin that raises unobtrusive messages within the browser, similar to the way that OS X's Growl Framework works. The idea is simple, deliver notifications to the end user in a noticeable way that doesn't obstruct the work flow and yet ",
+  "bugs": {
+    "url": "https://github.com/stanlemon/jGrowl/issues"
+  },
+  "homepage": "https://github.com/stanlemon/jGrowl",
+  "_id": "jgrowl@1.4.3",
+  "scripts": {},
+  "_shasum": "22367bbfdf74b36432f2c9d5885e8ce9215c3000",
+  "_from": "jgrowl@*",
+  "_npmVersion": "2.7.5",
+  "_nodeVersion": "0.12.2",
+  "_npmUser": {
+    "name": "stanlemon",
+    "email": "stosh1985@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "stanlemon",
+      "email": "stosh1985@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "22367bbfdf74b36432f2c9d5885e8ce9215c3000",
+    "tarball": "http://registry.npmjs.org/jgrowl/-/jgrowl-1.4.3.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/jgrowl/-/jgrowl-1.4.3.tgz",
+  "readme": "ERROR: No README data found!"
+}

@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -30,7 +31,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        //$this->middleware('guest', ['except' => 'getLogout']);
     }
 
     /**
@@ -46,7 +47,6 @@ class AuthController extends Controller
             'surname' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
-            'isRole' => 'required|integer',
         ]);
     }
 
@@ -63,10 +63,12 @@ class AuthController extends Controller
             'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'isRole' =>$data['isRole'],
-            'isActive' =>$data['isActive'] ? 1 : 0,
+            'isActive' => isset($data['isActive']) ? 1 : 0,
         ]);
     }
+
+
+
 
     /**
      * Get the post register / login redirect path.
@@ -77,4 +79,36 @@ class AuthController extends Controller
     {
         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
     }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getRegister()
+    {
+        return view('control-panel/users.create');
+    }
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function postRegister(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $this->create($request->all());
+
+        return redirect(route('users.index'));
+    }
+
+
 }
