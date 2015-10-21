@@ -28,6 +28,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     // Edit user...
     Route::post('users/edit-status', ['as' => 'users.edit-status', 'uses' => 'Users\UsersController@editStatusAjax']);
+    Route::get('users/edit/{id}', ['as' => 'users.edit', 'uses' => 'Users\UsersController@edit']);
+    Route::post('users/edit/{id}', ['as' => 'users.edit-post', 'uses' => 'Users\UsersController@update']);
     Route::any('users/destroy', ['as' => 'users.destroy', 'uses' => 'Users\UsersController@destroy']);
 
     Route::get('/', function () {

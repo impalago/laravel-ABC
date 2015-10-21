@@ -254,3 +254,7 @@ body {
 .user-action i {
     cursor: pointer;
 }
+
+.deleteUser {
+    color: #DF2700;
+}

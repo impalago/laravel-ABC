@@ -1,8 +1,10 @@
 $(window).load(function () {
     $.material.init();
+
     $('.tt-on').tooltip({
         placement: 'left'
     });
+
 });
 
 /**
@@ -44,6 +46,9 @@ $(document).on('click', '.deleteUser', function (e) {
 
 
     $.confirm({
+        theme: 'hololight',
+        confirmButton: 'Yes',
+        cancelButton: 'No',
         title: 'Are you sure?',
         content: 'The user will be deleted without possibility to restore.',
         confirm: function(){

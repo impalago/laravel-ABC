@@ -45,7 +45,7 @@
                             </td>
                             <td>
                                 <div class="user-action">
-                                    <i class="mdi-content-create editUser tt-on" data-toggle="tooltip" title="Edit User"></i>
+                                    <a href="{{ route('users.edit', array($user->id)) }}"><i class="mdi-content-create editUser tt-on" data-toggle="tooltip" title="Edit User"></i></a>
                                     <i class="mdi-action-delete deleteUser tt-on" data-toggle="tooltip" title="Delete User"
                                        data-user-id="{{ $user->id }}"
                                        data-method="post"
