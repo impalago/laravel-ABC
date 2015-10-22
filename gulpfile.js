@@ -12,5 +12,25 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.scripts([
+        '/jquery/dist/jquery.min.js',
+        '/bootstrap/dist/js/bootstrap.min.js',
+        '/bootstrap-material/dist/js/material.min.js',
+        '/masonry-layout/dist/masonry.pkgd.js',
+        '/jgrowl/jquery.jgrowl.min.js',
+        '/jquery-confirm2/dist/jquery-confirm.min.js'],
+        'public/js/dependencies.js', 'public/libs/')
+
+        .scriptsIn("resources/js/", 'node_modules')
+
+        .styles([
+            "/bootstrap/dist/css/bootstrap.min.css",
+            "/bootstrap-material/dist/css/material.min.css",
+            "/jgrowl/jquery.jgrowl.min.css",
+            "/jquery-confirm2/dist/jquery-confirm.min.css"
+        ], 'public/css/dependencies.css', 'node_modules')
+        .styles([
+            "/style.css",
+            "/ytb.css"
+        ], 'public/css/style.css', 'resources/css');
 });

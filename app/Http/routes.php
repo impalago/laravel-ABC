@@ -18,8 +18,15 @@ Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController
 
 Route::group(['middleware' => 'auth'], function() {
 
+    Route::get('/', function () {
+        return view('control-panel/dashboard.index');
+    });
 
-    // Users
+    /*
+    |--------------------------------------------------------------------------
+    | Users
+    |--------------------------------------------------------------------------
+    */
     Route::group(['prefix' => 'users', 'middleware' => 'acl:edit_users'], function() {
         // List users
         Route::get('', ['as' => 'users.index', 'uses' => 'Users\UsersController@index']);
@@ -36,13 +43,30 @@ Route::group(['middleware' => 'auth'], function() {
     });
 
 
-    Route::get('/', function () {
-        return view('control-panel/dashboard.index');
-    });
+    /*
+    |--------------------------------------------------------------------------
+    | Errors
+    |--------------------------------------------------------------------------
+    */
 
-    // Access denied
+    // 401 Access denied
     Route::get('401', ['as' => 'error.401', function() {
-        return view('errors.access_denied');
+        return view('errors.401');
     }]);
+
+    /*
+    |--------------------------------------------------------------------------
+    | Settings
+    |--------------------------------------------------------------------------
+    */
+    Route::group(['prefix' => 'settings', 'middleware' => 'acl:edit_settings'], function() {
+        Route::get('/', ['as' => 'settings.index', 'uses' => 'Settings\SettingsController@index']);
+
+        // User roles
+        Route::get('user-roles', ['as' => 'settings.user-roles', 'uses' => 'Settings\SettingsController@editUserRoles']);
+
+        // Permissions
+        Route::get('permissions', ['as' => 'settings.permissions', 'uses' => 'Settings\SettingsController@editPermissions']);
+    });
 
 });

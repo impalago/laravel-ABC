@@ -84,9 +84,6 @@ class AuthController extends Controller
         }
     }
 
-
-
-
     /**
      * Get the post register / login redirect path.
      *

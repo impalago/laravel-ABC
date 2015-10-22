@@ -1,5 +1,9 @@
 @extends('layouts.layout-panel')
 
+@section('left-panel')
+    @include('control-panel/users/blocks.left-panel')
+@stop
+
 @section('content')
 
     <div class="container-fluid">
