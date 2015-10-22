@@ -23,6 +23,6 @@ class CheckPermission
             }
         }
 
-        return $request->ajax ? response('Unauthorized.', 401) : redirect('/login');
+        return $request->ajax ? response('Unauthorized.', 401) : redirect(route('error.401'));
     }
 }

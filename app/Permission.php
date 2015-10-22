@@ -1,4 +1,4 @@
-<?php namespace App\Permission;
+<?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 

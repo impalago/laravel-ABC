@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -65,6 +66,22 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'isActive' => isset($data['isActive']) ? 1 : 0,
         ]);
+    }
+
+    /**
+     * Handle an authentication attempt.
+     *
+     * @return Response
+     */
+    public function authenticate()
+    {
+        $user = \Input::all();
+        if (Auth::attempt(['email' => $user['email'], 'password' => $user['password'], 'isActive' => 1]))
+        {
+            return redirect()->intended('/');
+        } else {
+            return redirect(route('auth.login'))->withErrors('The user is not active!');
+        }
     }
 
 
