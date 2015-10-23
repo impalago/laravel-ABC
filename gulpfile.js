@@ -21,7 +21,7 @@ elixir(function(mix) {
         '/jquery-confirm2/dist/jquery-confirm.min.js'],
         'public/js/dependencies.js', 'public/libs/')
 
-        .scriptsIn("resources/js/", 'node_modules')
+        .scriptsIn("resources/js/", 'public/js/app.js')
 
         .styles([
             "/bootstrap/dist/css/bootstrap.min.css",

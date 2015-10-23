@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Settings;
 
-use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Request;
 
 class SettingsController extends Controller
 {
@@ -16,27 +16,6 @@ class SettingsController extends Controller
     public function index()
     {
         return view('control-panel/settings.index');
-    }
-
-    /**
-     * Display a listing of the user roles.
-     * Edit a listing of the user roles
-     * @return \Illuminate\Http\Response
-     */
-    public function editUserRoles() {
-
-
-        return view('control-panel/settings.user-roles');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**

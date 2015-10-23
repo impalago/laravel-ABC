@@ -3,8 +3,8 @@ var commonProperties = {
 
     'queryAjax' : function($elem, callback,dataType, data) {
         $.ajax({
-            type: $elem.attr('method') ? $elem.attr('method') : $elem.data('method'),
-            url: $elem.attr('action') ? $elem.attr('action') : $elem.data('action'),
+            type: $elem.data('method') ? $elem.data('method') : $elem.attr('method'),
+            url: $elem.data('action') ? $elem.data('action') : $elem.attr('action'),
             data: data ? data : $elem.serialize(),
             dataType: dataType ? dataType : 'html',
             success: function(data) {

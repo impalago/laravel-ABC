@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('edit-status', ['as' => 'users.edit-status', 'uses' => 'Users\UsersController@editStatusAjax']);
         Route::get('edit/{id}', ['as' => 'users.edit', 'uses' => 'Users\UsersController@edit']);
         Route::post('edit/{id}', ['as' => 'users.edit-post', 'uses' => 'Users\UsersController@update']);
+        // Remove user
         Route::any('destroy', ['as' => 'users.destroy', 'uses' => 'Users\UsersController@destroy']);
     });
 
@@ -59,11 +60,18 @@ Route::group(['middleware' => 'auth'], function() {
     | Settings
     |--------------------------------------------------------------------------
     */
-    Route::group(['prefix' => 'settings', 'middleware' => 'acl:edit_settings'], function() {
+    Route::group(['prefix' => 'settings'], function() {
         Route::get('/', ['as' => 'settings.index', 'uses' => 'Settings\SettingsController@index']);
 
         // User roles
-        Route::get('user-roles', ['as' => 'settings.user-roles', 'uses' => 'Settings\SettingsController@editUserRoles']);
+        Route::get('user-roles', ['as' => 'settings.user-roles', 'uses' => 'Settings\RolesController@editUserRoles']);
+        // Create role
+        Route::post('user-roles-create', ['as' => 'settings.user-roles-create', 'uses' => 'Settings\RolesController@roleCreate']);
+        // Update role
+        Route::post('user-roles-update/{id}', ['as' => 'settings.get-roles-update', 'uses' => 'Settings\RolesController@getRoleUpdate']);
+        Route::post('user-roles-post-update/{id}', ['as' => 'settings.user-roles-update', 'uses' => 'Settings\RolesController@postRoleUpdate']);
+        // Remove role
+        Route::post('user-roles-destroy/{id}', ['as' => 'settings.user-roles-destroy', 'uses' => 'Settings\RolesController@roleDestroy']);
 
         // Permissions
         Route::get('permissions', ['as' => 'settings.permissions', 'uses' => 'Settings\SettingsController@editPermissions']);
