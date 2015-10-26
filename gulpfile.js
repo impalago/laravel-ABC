@@ -19,7 +19,7 @@ elixir(function(mix) {
         '/masonry-layout/dist/masonry.pkgd.js',
         '/jgrowl/jquery.jgrowl.min.js',
         '/jquery-confirm2/dist/jquery-confirm.min.js'],
-        'public/js/dependencies.js', 'public/libs/')
+        'public/js/dependencies.js', 'node_modules')
 
         .scriptsIn("resources/js/", 'public/js/app.js')
 

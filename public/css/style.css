@@ -255,8 +255,27 @@ body {
     cursor: pointer;
 }
 
-.deleteUser {
+.mdi-action-delete {
     color: #DF2700;
+    cursor: pointer;
+}
+
+.modal-content .modal-body {
+    padding: 20px 24px 16px;
+}
+
+.modal-content .modal-header {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 15px 24px 5px;
+}
+
+.modal-content .form-group label {
+    font-size: 18px;
+}
+
+.permission_role label {
+    display: inline-block;
+    margin-right: 8px;
 }
 .login {
     margin-top: 50px;

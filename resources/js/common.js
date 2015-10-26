@@ -1,3 +1,23 @@
+/**
+ * Setting Ytb package
+ *
+ * Had to be done through window load because jquery masonry not working
+ *
+ **/
+$(window).load(function() {
+    $grid = $('.grid');
+    $grid.masonry({
+        itemSelector: '.grid-item',
+        singleMode: false,
+        isResizable: true,
+        isAnimated: true,
+        animationOptions: {
+            queue: false,
+            duration: 500
+        }
+    });
+});
+
 $(function() {
     $.material.init();
 
@@ -5,6 +25,9 @@ $(function() {
         placement: 'left'
     });
 
+    $('.disabled').on('click', function(e) {
+        e.preventDefault();
+    });
 
     /**
      * Menu add class 'active'
@@ -20,28 +43,6 @@ $(function() {
 
 
     /**
-     * Setting Ytb package
-     *
-     **/
-
-    $('.disabled').on('click', function(e) {
-        e.preventDefault();
-    });
-
-    $grid = $('.grid');
-    $grid.masonry({
-        itemSelector: '.grid-item',
-        singleMode: false,
-        isResizable: true,
-        isAnimated: true,
-        animationOptions: {
-            queue: false,
-            duration: 500
-        }
-    });
-
-
-    /**
      * Receive a csrf-token for ajax requests
      *
      **/
@@ -51,6 +52,9 @@ $(function() {
         }
     });
 });
+
+
+
 
 
 

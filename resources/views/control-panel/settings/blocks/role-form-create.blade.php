@@ -19,13 +19,22 @@
                     {!! Form::text('role_slug', null, array('class' => 'form-control')) !!}
                 </div>
 
+
+                <div class="checkbox permission_role">
+                    @foreach($permissions as $permission)
+                        <label>
+                            {!! Form::checkbox('permission_role[]', $permission->id) !!} {{ $permission->permission_title }}
+                        </label>
+                    @endforeach
+                </div>
+
                 {!! Form::submit('Save', array('class' => 'btn btn-success')) !!}
 
                 {!! Form::close() !!}
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

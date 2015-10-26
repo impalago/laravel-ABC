@@ -74,7 +74,15 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('user-roles-destroy/{id}', ['as' => 'settings.user-roles-destroy', 'uses' => 'Settings\RolesController@roleDestroy']);
 
         // Permissions
-        Route::get('permissions', ['as' => 'settings.permissions', 'uses' => 'Settings\SettingsController@editPermissions']);
+        Route::get('permissions', ['as' => 'settings.permissions', 'uses' => 'Settings\PermissionsController@editPermissions']);
+        // Create permission
+        Route::post('permission-create', ['as' => 'settings.permission-create', 'uses' => 'Settings\PermissionsController@permissionCreate']);
+        // Update permission
+        Route::post('permission-update/{id}', ['as' => 'settings.get-permission-update', 'uses' => 'Settings\PermissionsController@getPermissionUpdate']);
+        Route::post('permission-post-update/{id}', ['as' => 'settings.permission-update', 'uses' => 'Settings\PermissionsController@postPermissionUpdate']);
+        // Remove permission
+        Route::post('permission-destroy/{id}', ['as' => 'settings.permission-destroy', 'uses' => 'Settings\PermissionsController@permissionDestroy']);
+
     });
 
 });

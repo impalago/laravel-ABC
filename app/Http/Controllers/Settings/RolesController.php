@@ -6,6 +6,7 @@ use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Role;
+use App\Permission;
 
 
 class RolesController extends Controller
@@ -18,7 +19,8 @@ class RolesController extends Controller
     public function editUserRoles() {
 
         $roles = Role::all();
-        return view('control-panel/settings.user-roles', ['roles' => $roles]);
+        $permissions = Permission::all();
+        return view('control-panel/settings.user-roles', ['roles' => $roles, 'permissions' => $permissions]);
     }
 
     /**
@@ -33,6 +35,17 @@ class RolesController extends Controller
         $role->role_title = $data['role_title'];
         $role->role_slug = $data['role_slug'];
         $role->save();
+        $insertId = $role->id;
+
+        if(isset($data['permission_role'])) {
+            $permission_role = [];
+            foreach ($data['permission_role'] as $pr) {
+                $permission_role[] = array('permission_id' => $pr, 'role_id' => $insertId);
+            }
+
+            \DB::table('permission_role')->insert($permission_role);
+        }
+
         return redirect(route('settings.user-roles'));
     }
 
@@ -46,7 +59,21 @@ class RolesController extends Controller
     public function getRoleUpdate($id)
     {
         $role = Role::find($id);
-        return view('control-panel/settings/blocks.role-form-update', ['role' => $role]);
+        $permissions = Permission::all();
+        for($i = 0; isset($permissions[$i]); $i++) {
+            $permissionsCheck = \DB::table('permission_role')
+                                        ->where('role_id', $id)
+                                        ->where('permission_id', $permissions[$i]['id'])
+                                        ->first();
+
+            if($permissionsCheck) {
+                $permissions[$i]['check'] = true;
+            } else {
+                $permissions[$i]['check'] = false;
+            }
+        }
+
+        return view('control-panel/settings/blocks.role-form-update', ['role' => $role, 'permissions' => $permissions]);
     }
 
     /**
@@ -63,6 +90,18 @@ class RolesController extends Controller
         $role->role_title = $data['role_title'];
         $role->role_slug = $data['role_slug'];
         $role->save();
+
+        \DB::table('permission_role')->where('role_id', $id)->delete();
+
+        if(isset($data['permission_role'])) {
+            $permission_role = [];
+            foreach($data['permission_role'] as $pr) {
+                $permission_role[] = array('permission_id' => $pr, 'role_id' => $id);
+            }
+
+            \DB::table('permission_role')->insert($permission_role);
+        }
+
         return redirect(route('settings.user-roles'));
     }
 
