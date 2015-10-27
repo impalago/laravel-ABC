@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Role;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -38,7 +39,7 @@ class AuthController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -54,7 +55,7 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
     protected function create(array $data)
@@ -76,11 +77,10 @@ class AuthController extends Controller
     public function authenticate()
     {
         $user = \Input::all();
-        if (Auth::attempt(['email' => $user['email'], 'password' => $user['password'], 'isActive' => 1]))
-        {
+        if (Auth::attempt(['email' => $user['email'], 'password' => $user['password'], 'isActive' => 1])) {
             return redirect()->intended('/');
         } else {
-            return redirect(route('auth.login'))->withErrors('The user is not active!');
+            return redirect(route('auth.login'))->withErrors('Email or password is incorrect or the user is not active!');
         }
     }
 
@@ -101,7 +101,8 @@ class AuthController extends Controller
      */
     public function getRegister()
     {
-        return view('control-panel/users.create');
+        $roles = Role::all();
+        return view('control-panel/users.create', ['roles' => $roles]);
     }
 
 
@@ -112,14 +113,19 @@ class AuthController extends Controller
     public function postRegister(Request $request)
     {
         $validator = $this->validator($request->all());
-
         if ($validator->fails()) {
             $this->throwValidationException(
                 $request, $validator
             );
         }
 
-        $this->create($request->all());
+        $user = $this->create($request->all());
+
+        if ($user->id and $request->role) {
+            \DB::table('role_user')->insert(
+                array('role_id' => $request->role, 'user_id' => $user->id)
+            );
+        }
 
         return redirect(route('users.index'));
     }

@@ -63,10 +63,20 @@
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label for="selectRole" class="col-md-2 control-label">Role</label>
+                                <div class="col-md-10">
+                                    <select class="form-control" id="select" name="role">
+                                        @if($roles)
+                                            @foreach($roles as $role)
+                                                <option value="{{ $role->id }}">{{ $role->role_title }}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="col-md-10 col-md-offset-2 pl0">
-                                <select class="form-control" id="select" name="isRole">
-                                    <option value="1">Admin</option>
-                                </select>
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="isActive"> Active

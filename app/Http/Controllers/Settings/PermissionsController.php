@@ -15,7 +15,8 @@ class PermissionsController extends Controller
      * Edit a listing of the user roles
      * @return \Illuminate\Http\Response
      */
-    public function editPermissions() {
+    public function editPermissions()
+    {
 
         $permissions = Permission::all();
         return view('control-panel/settings.permissions', ['permissions' => $permissions]);
@@ -71,15 +72,13 @@ class PermissionsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function permissionDestroy($id)
     {
-        \DB::table('permission_role')->where('permission_id', $id)->delete();
         $role = Permission::find($id);
         $role->delete();
-
         return ('The permission is successfully deleted!');
     }
 }

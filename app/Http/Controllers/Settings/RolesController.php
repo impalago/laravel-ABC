@@ -16,7 +16,8 @@ class RolesController extends Controller
      * Edit a listing of the user roles
      * @return \Illuminate\Http\Response
      */
-    public function editUserRoles() {
+    public function editUserRoles()
+    {
 
         $roles = Role::all();
         $permissions = Permission::all();
@@ -37,7 +38,7 @@ class RolesController extends Controller
         $role->save();
         $insertId = $role->id;
 
-        if(isset($data['permission_role'])) {
+        if (isset($data['permission_role'])) {
             $permission_role = [];
             foreach ($data['permission_role'] as $pr) {
                 $permission_role[] = array('permission_id' => $pr, 'role_id' => $insertId);
@@ -60,13 +61,13 @@ class RolesController extends Controller
     {
         $role = Role::find($id);
         $permissions = Permission::all();
-        for($i = 0; isset($permissions[$i]); $i++) {
+        for ($i = 0; isset($permissions[$i]); $i++) {
             $permissionsCheck = \DB::table('permission_role')
-                                        ->where('role_id', $id)
-                                        ->where('permission_id', $permissions[$i]['id'])
-                                        ->first();
+                ->where('role_id', $id)
+                ->where('permission_id', $permissions[$i]['id'])
+                ->first();
 
-            if($permissionsCheck) {
+            if ($permissionsCheck) {
                 $permissions[$i]['check'] = true;
             } else {
                 $permissions[$i]['check'] = false;
@@ -93,9 +94,9 @@ class RolesController extends Controller
 
         \DB::table('permission_role')->where('role_id', $id)->delete();
 
-        if(isset($data['permission_role'])) {
+        if (isset($data['permission_role'])) {
             $permission_role = [];
-            foreach($data['permission_role'] as $pr) {
+            foreach ($data['permission_role'] as $pr) {
                 $permission_role[] = array('permission_id' => $pr, 'role_id' => $id);
             }
 
@@ -108,7 +109,7 @@ class RolesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function roleDestroy($id)

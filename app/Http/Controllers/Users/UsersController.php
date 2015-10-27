@@ -45,7 +45,12 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('control-panel/users.edit', ['user' => $user]);
+        $roles = Role::all();
+        $userRole = \DB::table('role_user')->where('user_id', $id)->first();
+        if(isset($userRole->role_id)) {
+            $userRole = $userRole->role_id;
+        }
+        return view('control-panel/users.edit', ['user' => $user, 'roles' => $roles, 'userRole' => $userRole]);
     }
 
 
@@ -64,6 +69,16 @@ class UsersController extends Controller
         $user->email = $data['email'];
         $user->isActive = isset($data['isActive']) ? 1 : 0;
         $user->save();
+        $userRole = \DB::table('role_user')->where('user_id', $id)->first();
+        if (isset($userRole)) {
+            if ($userRole->role_id != $data['role']) {
+                \DB::table('role_user')->where('user_id', $id)->update(array('role_id' => $data['role']));
+            }
+        } else {
+            \DB::table('role_user')->insert(
+                array('role_id' => $data['role'], 'user_id' => $id)
+            );
+        }
         return redirect(route('users.index'));
     }
 
