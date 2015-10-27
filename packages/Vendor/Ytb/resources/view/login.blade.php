@@ -1,5 +1,9 @@
 @extends(config('ytb.views.layout'))
 
+@section('left-panel')
+    @include('layouts/blocks.left-panel')
+@stop
+
 @section(config('ytb.sections.content'))
 
     <div class="row login">

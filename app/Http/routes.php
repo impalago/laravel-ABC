@@ -50,10 +50,12 @@ Route::group(['middleware' => 'auth'], function () {
     |--------------------------------------------------------------------------
     */
 
-    // 401 Access denied
-    Route::get('401', ['as' => 'error.401', function () {
-        return view('errors.401');
-    }]);
+    Route::group(['prefix' => 'error'], function () {
+        // 401 Access denied
+        Route::get('401', ['as' => 'error.401', function () {
+            return view('errors.401');
+        }]);
+    });
 
     /*
     |--------------------------------------------------------------------------

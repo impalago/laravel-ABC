@@ -47,7 +47,7 @@ class UsersController extends Controller
         $user = User::find($id);
         $roles = Role::all();
         $userRole = \DB::table('role_user')->where('user_id', $id)->first();
-        if(isset($userRole->role_id)) {
+        if (isset($userRole->role_id)) {
             $userRole = $userRole->role_id;
         }
         return view('control-panel/users.edit', ['user' => $user, 'roles' => $roles, 'userRole' => $userRole]);
