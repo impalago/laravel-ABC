@@ -277,3 +277,12 @@ body {
     display: inline-block;
     margin-right: 8px;
 }
+
+.profile {
+    text-align: center;
+}
+
+.profile .panel-footer {
+    font-size: 20px;
+    padding: 7px 15px;
+}

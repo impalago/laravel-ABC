@@ -16,6 +16,10 @@ Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@authenticate']);
 Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
 
+// Facebook Auth
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', function () {
@@ -27,7 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
     | Users
     |--------------------------------------------------------------------------
     */
-    Route::group(['prefix' => 'users', 'middleware' => 'acl:edit_users'], function () {
+    Route::group(['prefix' => 'users'], function () {
         // List users
         Route::get('', ['as' => 'users.index', 'uses' => 'Users\UsersController@index']);
 
@@ -62,7 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
     | Settings
     |--------------------------------------------------------------------------
     */
-    Route::group(['prefix' => 'settings', 'middleware' => 'acl:edit_settings'], function () {
+    Route::group(['prefix' => 'settings'], function () {
         Route::get('/', ['as' => 'settings.index', 'uses' => 'Settings\SettingsController@index']);
 
         // User roles
