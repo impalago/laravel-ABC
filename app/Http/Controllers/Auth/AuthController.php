@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Role;
 use App\User;
+use Illuminate\Support\Facades\Session;
 use Validator;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Controller;
@@ -11,6 +12,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Services\FacebookLogin;
 
 class AuthController extends Controller
 {
@@ -139,7 +141,7 @@ class AuthController extends Controller
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('facebook')->scopes(['user_photos', 'user_birthday'])->redirect();
+        return Socialite::driver('facebook')->redirect();
     }
 
     /**
@@ -154,7 +156,10 @@ class AuthController extends Controller
         } catch (Exception $e) {
             return redirect('auth/facebook');
         }
+
         $authUser = $this->findOrCreateUser($user);
+
+        Session::put('facebook_access_token', $user->token);
 
         Auth::login($authUser, true);
 

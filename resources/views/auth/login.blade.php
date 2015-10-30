@@ -31,6 +31,9 @@
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">
                             Sign in</button>
+
+                        <a class="btn btn-lg btn-primary btn-block facebook" href="{{ route('auth.facebook') }}">
+                            Log in with Facebook</a>
                     </form>
                 </div>
             </div>

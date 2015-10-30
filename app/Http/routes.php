@@ -17,7 +17,7 @@ Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@
 Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
 
 // Facebook Auth
-Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook', ['as' => 'auth.facebook', 'uses' => 'Auth\AuthController@redirectToProvider']);
 Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -89,6 +89,16 @@ Route::group(['middleware' => 'auth'], function () {
         // Remove permission
         Route::post('permission-destroy/{id}', ['as' => 'settings.permission-destroy', 'uses' => 'Settings\PermissionsController@permissionDestroy']);
 
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Facebook
+    |--------------------------------------------------------------------------
+    */
+
+    Route::group(['prefix' => 'facebook'], function() {
+        Route::get('', ['as' => 'fb.index', 'uses' => 'Facebook\FacebookController@index']);
     });
 
 });
