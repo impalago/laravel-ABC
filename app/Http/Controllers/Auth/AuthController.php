@@ -29,12 +29,7 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function __construct(FacebookLogin $fb)
     {
         //$this->middleware('guest', ['except' => 'getLogout']);
     }
@@ -159,6 +154,7 @@ class AuthController extends Controller
 
         $authUser = $this->findOrCreateUser($user);
 
+
         Session::put('facebook_access_token', $user->token);
 
         Auth::login($authUser, true);
@@ -176,7 +172,10 @@ class AuthController extends Controller
     {
         $authUser = User::where('facebook_id', $facebookUser->id)->first();
 
-        if ($authUser){
+        if ($authUser) {
+
+            $authUser->facebook_token = $facebookUser->token;
+            $authUser->save();
             return $authUser;
         }
 

@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
 use App\Http\Services\FacebookLogin;
-use Facebook\FacebookRequest;
+use Carbon\Carbon;
 
 class FacebookController extends Controller
 {
@@ -27,81 +26,133 @@ class FacebookController extends Controller
      */
     public function index()
     {
+        $pages = $this->listPages();
+        return view('control-panel/facebook.index', ['pages' => $pages]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function listPages()
+    {
         $fb = $this->fb->getSetting();
-        $fb->setDefaultAccessToken(Session::get('facebook_access_token'));
+        $user_id = \Auth::user()->facebook_id;
+        if (\Auth::user()->facebook_token) {
+            $fb->setDefaultAccessToken(\Auth::user()->facebook_token);
+        } else {
+            redirect(route('auth.login'));
+        }
+
         $request = $fb->request(
             'GET',
-            '/me'
+            '/' . $user_id . '/accounts'
         );
         $response = $fb->getClient()->sendRequest($request);
+        $graphObj = $response->getDecodedBody();
 
-
-        dd($response);
+        return $graphObj['data'];
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create()
+    public function getPage($id)
     {
-        //
+
+        $pages = $this->listPages();
+        $fb = $this->fb->getSetting();
+        if (\Auth::user()->facebook_token) {
+            $fb->setDefaultAccessToken(\Auth::user()->facebook_token);
+        } else {
+            redirect(route('auth.login'));
+        }
+
+
+        $requestPage = $fb->sendRequest(
+            'GET',
+            '/' . $id
+        );
+        $page = $requestPage->getDecodedBody();
+        $pageName = $page['name'];
+
+        $request = $fb->sendRequest(
+            'GET',
+            '/' . $id . '/feed',
+            ['fields' => 'id,message,attachments,created_time,from']
+        );
+        $graphObj = $request->getDecodedBody();
+        //dd($graphObj);
+        foreach ($graphObj['data'] as $key => $post) {
+            $pagePosts[$key]['message'] = isset($post['message']) ? $post['message'] : '';
+            $pagePosts[$key]['from'] = isset($post['from']['name']) ? $post['from']['name'] : '';
+            $pagePosts[$key]['created_time'] = isset($post['created_time']) ? Carbon::parse($post['created_time'])->timezone('Europe/Moscow')->format('d F Y H:i') : '';
+
+            if (empty($post['attachments']['data'])) {
+                continue;
+            }
+
+            foreach ($post['attachments']['data'] as $attach) {
+                if (isset($attach['subattachments']['data'])) {
+                    $pagePosts[$key]['files'] = $attach['subattachments']['data'];
+                } else {
+                    $pagePosts[$key]['files'] = array(0 => array('media' => array('image' => array('src' => $attach['media']['image']['src']))));
+                }
+            }
+        }
+
+        return view('control-panel/facebook.page', [
+            'pages' => $pages,
+            'posts' => $pagePosts,
+            'page_name' => $pageName,
+            'page_id' => $id
+        ]);
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function createPostPage(Request $request)
     {
-        //
+        $this->validate($request, [
+            'message' => 'required'
+        ]);
+
+        $fb = $this->fb->getSetting();
+        $pageInfo = $fb->sendRequest(
+            'GET',
+            '/' . $request->page_id,
+            [
+                'fields' => 'access_token',
+                'access_token' => \Auth::user()->facebook_token
+            ]
+        );
+        $pageToken = $pageInfo->getDecodedBody();
+
+        if (empty($request->image)) {
+
+            $fb->post('/' . $request->page_id . '/feed',
+                [
+                    'access_token' => $pageToken['access_token'],
+                    'message' => $request->message
+                ]
+            );
+
+        } else {
+
+            $fb->post('/' . $request->page_id . '/photos', [
+                'access_token' => $pageToken['access_token'],
+                'message' => $request->message,
+                'source' => $fb->fileToUpload($request->file('image')->getRealPath())
+            ]);
+
+        }
+        
+        return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

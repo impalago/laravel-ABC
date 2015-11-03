@@ -290,6 +290,15 @@ body {
 .facebook {
     background-color: #3B5998 !important;
 }
+
+#addPost textarea {
+    border: 1px solid #b5b5b5;
+    padding: 10px;
+}
+
+#addPost .btn {
+    margin-top: 0;
+}
 .login {
     margin-top: 50px;
 }

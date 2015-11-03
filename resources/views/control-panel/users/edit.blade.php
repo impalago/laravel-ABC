@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="row page-header">
             <div class="col-md-9">
-                <h1>Add User</h1>
+                <h1>Edit User</h1>
             </div>
         </div>
     </div>

@@ -97,8 +97,11 @@ Route::group(['middleware' => 'auth'], function () {
     |--------------------------------------------------------------------------
     */
 
-    Route::group(['prefix' => 'facebook'], function() {
+    Route::group(['prefix' => 'facebook'], function () {
         Route::get('', ['as' => 'fb.index', 'uses' => 'Facebook\FacebookController@index']);
+        Route::get('/page/{id}', ['as' => 'fb.page', 'uses' => 'Facebook\FacebookController@getPage']);
+
+        Route::post('/page/create-post/', ['as' => 'fb.create-post-page', 'uses' => 'Facebook\FacebookController@createPostPage']);
     });
 
 });
