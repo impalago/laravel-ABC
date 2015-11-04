@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Settings;
 
 use Request;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Permission;
+use App\Http\Requests\PermissionsRequest;
 
 
 class PermissionsController extends Controller
@@ -25,15 +25,15 @@ class PermissionsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param PermissionsRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function permissionCreate()
+    public function permissionCreate(PermissionsRequest $request)
     {
-        $data = Request::all();
         $permission = new Permission();
-        $permission->permission_title = $data['permission_title'];
-        $permission->permission_slug = $data['permission_slug'];
-        $permission->permission_description = $data['permission_description'];
+        $permission->permission_title = $request->permission_title;
+        $permission->permission_slug = $request->permission_slug;
+        $permission->permission_description = $request->permission_description;
         $permission->save();
         return redirect(route('settings.permissions'));
     }
@@ -54,17 +54,16 @@ class PermissionsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     * @internal param \Illuminate\Http\Request $request
+     * @param PermissionsRequest $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postPermissionUpdate($id)
+    public function postPermissionUpdate(PermissionsRequest $request, $id)
     {
-        $data = Request::all();
         $permission = Permission::find($id);
-        $permission->permission_title = $data['permission_title'];
-        $permission->permission_slug = $data['permission_slug'];
-        $permission->permission_description = $data['permission_description'];
+        $permission->permission_title = $request->permission_title;
+        $permission->permission_slug = $request->permission_slug;
+        $permission->permission_description = $request->permission_description;
         $permission->save();
         return redirect(route('settings.permissions'));
     }

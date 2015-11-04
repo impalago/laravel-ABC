@@ -16,7 +16,7 @@
 
     <div class="row grid">
         @foreach($videos as $video)
-            <div class="col-sm-6 col-md-4 grid-item">
+            <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
                 <div class="thumbnail">
                     <a href="/ytb/video/{{ $video['snippet']['resourceId']['videoId'] }}" title="{{ $video['snippet']['title'] }}">
                         <img src="{{ $video['snippet']['thumbnails']['medium']['url'] }}" alt="">

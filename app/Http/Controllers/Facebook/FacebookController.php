@@ -31,7 +31,7 @@ class FacebookController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource left menu.
      *
      * @return \Illuminate\Http\Response
      */
@@ -56,6 +56,8 @@ class FacebookController extends Controller
     }
 
     /**
+     * Get posts page
+     *
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -113,6 +115,8 @@ class FacebookController extends Controller
     }
 
     /**
+     * Create post
+     *
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */

@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Role;
 use App\Permission;
+use App\Http\Requests\RolesRequest;
 
 
 class RolesController extends Controller
@@ -24,23 +25,25 @@ class RolesController extends Controller
         return view('control-panel/settings.user-roles', ['roles' => $roles, 'permissions' => $permissions]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param RolesRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function roleCreate()
+    public function roleCreate(RolesRequest $request)
     {
-        $data = Request::all();
+
         $role = new Role();
-        $role->role_title = $data['role_title'];
-        $role->role_slug = $data['role_slug'];
+        $role->role_title = $request->role_title;
+        $role->role_slug = $request->role_slug;
         $role->save();
         $insertId = $role->id;
 
-        if (isset($data['permission_role'])) {
+        if (isset($request->permission_role)) {
             $permission_role = [];
-            foreach ($data['permission_role'] as $pr) {
+            foreach ($request->permission_role as $pr) {
                 $permission_role[] = array('permission_id' => $pr, 'role_id' => $insertId);
             }
 
@@ -77,26 +80,26 @@ class RolesController extends Controller
         return view('control-panel/settings/blocks.role-form-update', ['role' => $role, 'permissions' => $permissions]);
     }
 
+
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     * @internal param \Illuminate\Http\Request $request
+     * @param RolesRequest $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postRoleUpdate($id)
+    public function postRoleUpdate(RolesRequest $request, $id)
     {
-        $data = Request::all();
         $role = Role::find($id);
-        $role->role_title = $data['role_title'];
-        $role->role_slug = $data['role_slug'];
+        $role->role_title = $request->role_title;
+        $role->role_slug = $request->role_slug;
         $role->save();
 
         \DB::table('permission_role')->where('role_id', $id)->delete();
 
-        if (isset($data['permission_role'])) {
+        if (isset($request->permission_role)) {
             $permission_role = [];
-            foreach ($data['permission_role'] as $pr) {
+            foreach ($request->permission_role as $pr) {
                 $permission_role[] = array('permission_id' => $pr, 'role_id' => $id);
             }
 
