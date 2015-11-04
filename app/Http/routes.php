@@ -101,7 +101,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('', ['as' => 'fb.index', 'uses' => 'Facebook\FacebookController@index']);
         Route::get('/page/{id}', ['as' => 'fb.page', 'uses' => 'Facebook\FacebookController@getPage']);
 
-        Route::post('/page/create-post/', ['as' => 'fb.create-post-page', 'uses' => 'Facebook\FacebookController@createPostPage']);
+        Route::post('/page/create-post', ['as' => 'fb.create-post-page', 'uses' => 'Facebook\FacebookController@createPostPage']);
+        Route::get('/page/delete-post/{id}', ['as' => 'fb.delete-post-page', 'uses' => 'Facebook\FacebookController@deletePostPage']);
     });
 
 });

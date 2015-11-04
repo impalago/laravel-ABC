@@ -88,6 +88,7 @@ class FacebookController extends Controller
         foreach ($graphObj['data'] as $key => $post) {
             $pagePosts[$key]['message'] = isset($post['message']) ? $post['message'] : '';
             $pagePosts[$key]['from'] = isset($post['from']['name']) ? $post['from']['name'] : '';
+            $pagePosts[$key]['id'] = isset($post['id']) ? $post['id'] : '';
             $pagePosts[$key]['created_time'] = isset($post['created_time']) ? Carbon::parse($post['created_time'])->timezone('Europe/Moscow')->format('d F Y H:i') : '';
 
             if (empty($post['attachments']['data'])) {
@@ -143,14 +144,32 @@ class FacebookController extends Controller
 
         } else {
 
-            $fb->post('/' . $request->page_id . '/photos', [
-                'access_token' => $pageToken['access_token'],
-                'message' => $request->message,
-                'source' => $fb->fileToUpload($request->file('image')->getRealPath())
-            ]);
+            $fb->post('/' . $request->page_id . '/photos',
+                [
+                    'access_token' => $pageToken['access_token'],
+                    'message' => $request->message,
+                    'source' => $fb->fileToUpload($request->file('image')->getRealPath())
+                ]
+            );
 
         }
         
+        return redirect()->back();
+    }
+
+
+    /**
+     * Delete post
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deletePostPage($id) {
+
+        $fb = $this->fb->getSetting();
+        $fb->setDefaultAccessToken(\Auth::user()->facebook_token);
+        $fb->delete('/'.$id);
+
         return redirect()->back();
     }
 

@@ -55,6 +55,9 @@
                                {{ $post['message'] }}
                             @endif
                         </div>
+                        <div class="panel-footer text-right">
+                            <a href="{{ route('fb.delete-post-page', $post['id']) }}">Delete</a>
+                        </div>
                     </div>
                 @endforeach
             </div>
