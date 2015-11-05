@@ -83,7 +83,7 @@ class FacebookController extends Controller
         $request = $fb->sendRequest(
             'GET',
             '/' . $id . '/feed',
-            ['fields' => 'id,message,attachments,created_time,from']
+            ['fields' => 'id,message,attachments,created_time,from,link']
         );
         $graphObj = $request->getDecodedBody();
         //dd($graphObj);
@@ -91,6 +91,7 @@ class FacebookController extends Controller
             $pagePosts[$key]['message'] = isset($post['message']) ? $post['message'] : '';
             $pagePosts[$key]['from'] = isset($post['from']['name']) ? $post['from']['name'] : '';
             $pagePosts[$key]['id'] = isset($post['id']) ? $post['id'] : '';
+            $pagePosts[$key]['link'] = isset($post['link']) ? $post['link'] : '';
             $pagePosts[$key]['created_time'] = isset($post['created_time']) ? Carbon::parse($post['created_time'])->timezone('Europe/Moscow')->format('d F Y H:i') : '';
 
             if (empty($post['attachments']['data'])) {
@@ -136,13 +137,13 @@ class FacebookController extends Controller
             ]
         );
         $pageToken = $pageInfo->getDecodedBody();
-
+        $fb->setDefaultAccessToken($pageToken['access_token']);
         if (empty($request->image)) {
 
             $fb->post('/' . $request->page_id . '/feed',
                 [
-                    'access_token' => $pageToken['access_token'],
-                    'message' => $request->message
+                    'message' => $request->message,
+                    'link' => $request->link
                 ]
             );
 
@@ -150,8 +151,8 @@ class FacebookController extends Controller
 
             $fb->post('/' . $request->page_id . '/photos',
                 [
-                    'access_token' => $pageToken['access_token'],
                     'message' => $request->message,
+                    'link' => $request->link,
                     'source' => $fb->fileToUpload($request->file('image')->getRealPath())
                 ]
             );

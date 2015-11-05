@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Ytb\Services;
+namespace Impalago\Ytb\Services;
 
 use Illuminate\Support\Facades\Session;
 

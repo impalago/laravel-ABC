@@ -29,34 +29,46 @@
         @endif
 
         @if(isset($posts))
-            <div class="posts-list">
+            <div class="posts-list grid">
                 @foreach($posts as $post)
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-md-8">Author: {{ $post['from'] }}</div>
-                                <div class="col-md-4 text-right">{{ $post['created_time'] }}</div>
+                    <div class="col-md-12 col-lg-6 grid-item">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-md-6">Author: {{ $post['from'] }}</div>
+                                    <div class="col-md-6 text-right">{{ $post['created_time'] }}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="panel-body">
-                            @if(isset($post['files']))
+                            <div class="panel-body">
+                                @if(isset($post['files']))
 
-                                <div class="col-md-7">{{ $post['message'] }}</div>
-                                <div class="col-md-5">
-                                    @foreach($post['files'] as $file)
-                                        <div class="col-md-6">
-                                            <a href="{{ $file['media']['image']['src'] }}" class="thumbnail">
+                                    <div class="col-md-4 col-lg-12">
+                                        @foreach($post['files'] as $file)
+                                            <a href="{{ isset($post['link']) ? $post['link'] : $file['media']['image']['src'] }}"
+                                               class="thumbnail"
+                                                    {{ isset($post['link']) ? 'target="_blank"' : '' }}>
                                                 <img src="{{ $file['media']['image']['src'] }}" alt="">
                                             </a>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
+                                    </div>
+
+                                    <div class="col-md-8 col-lg-12">{{ $post['message'] }}</div>
+
+                                @else
+                                    {{ $post['message'] }}
+                                @endif
+                            </div>
+                            <div class="panel-footer ">
+                                <div class="row">
+                                    <div class="col-md-6 ">
+                                        <a href="{{ $post['link'] }}" target="_blank">Go to the post</a>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <a href="{{ route('fb.delete-post-page', $post['id']) }}">Delete</a>
+                                    </div>
                                 </div>
-                            @else
-                               {{ $post['message'] }}
-                            @endif
-                        </div>
-                        <div class="panel-footer text-right">
-                            <a href="{{ route('fb.delete-post-page', $post['id']) }}">Delete</a>
+
+                            </div>
                         </div>
                     </div>
                 @endforeach
@@ -77,6 +89,10 @@
                             {!! Form::label('message', 'Message') !!}
                             {!! Form::textarea('message', null, array('class' => 'form-control', 'required')) !!}
                             {!! Form::hidden('page_id', $page_id) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('link', 'Link') !!}
+                            {!! Form::text('link', null, array('class' => 'form-control')) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('image', 'Image') !!}

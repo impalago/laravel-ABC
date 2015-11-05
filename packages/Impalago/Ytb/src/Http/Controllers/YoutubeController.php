@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\Ytb\Http\Controllers;
+namespace Impalago\Ytb\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-use Vendor\Ytb\Services\GoogleLogin;
+use Impalago\Ytb\Services\GoogleLogin;
 
 /**
  * Class for working with data Youtube
@@ -16,7 +16,7 @@ class YoutubeController extends Controller
     /**
      * A method of retrieving the list of videos
      *
-     * @param \Vendor\Ytb\Services\GoogleLogin $gl
+     * @param \Impalago\Ytb\Services\GoogleLogin $gl
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
     public function index(GoogleLogin $gl)
@@ -41,7 +41,7 @@ class YoutubeController extends Controller
     /**
      * More information about the video
      *
-     * @param \Vendor\Ytb\Services\GoogleLogin $gl
+     * @param \Impalago\Ytb\Services\GoogleLogin $gl
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */

@@ -155,7 +155,7 @@ return [
         /*
          * My packages...
          */
-        Vendor\Ytb\YtbServiceProvider::class,
+        Impalago\Ytb\YtbServiceProvider::class,
 
 
     ],

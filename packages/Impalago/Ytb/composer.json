@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Vendor\\Ytb": "src/"
+            "Impalago\\Ytb": "src/"
         }
     }
 }

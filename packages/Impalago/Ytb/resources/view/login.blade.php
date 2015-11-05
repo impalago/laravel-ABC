@@ -10,7 +10,9 @@
         <div class="alert alert-warning text-center">
             <h2>You need to authorize access before proceeding.</h2>
             <div>
-                <a href="{{ $loginUrl }}" class="btn btn-primary btn-lg">Authorize access</a>
+                <a class="btn btn-social btn-google btn-lg" href="{{ $loginUrl }}">
+                    <span class="fa fa-google "></span> Sign in with Google
+                </a>
             </div>
         </div>
     </div>

@@ -1,20 +1,21 @@
 <?php
 
-namespace Vendor\Ytb\Http\Controllers;
+namespace Impalago\Ytb\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Doctrine\Instantiator\Exception\InvalidArgumentException;
 use Illuminate\Support\Facades\Input;
+use Impalago\Ytb\Services\GoogleLogin;
 
 
 class YtbController extends Controller
 {
 
     /**
-     * @param \Vendor\Ytb\Services\GoogleLogin $gl
+     * @param \Impalago\Ytb\Services\GoogleLogin $gl
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function index(\Vendor\Ytb\Services\GoogleLogin $gl)
+    public function index(GoogleLogin $gl)
     {
 
         if ($gl->isLoggedIn()) {
@@ -26,9 +27,9 @@ class YtbController extends Controller
     }
 
     /**
-     * @param \Vendor\Ytb\Services\GoogleLogin $gl
+     * @param GoogleLogin $gl
      */
-    public function callbackLogin(\Vendor\Ytb\Services\GoogleLogin $gl)
+    public function callbackLogin(GoogleLogin $gl)
     {
 
         if (Input::has('error')) {
@@ -45,10 +46,10 @@ class YtbController extends Controller
     }
 
     /**
-     * @param \Vendor\Ytb\Services\GoogleLogin $gl
+     * @param GoogleLogin $gl
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function logout(\Vendor\Ytb\Services\GoogleLogin $gl)
+    public function logout(GoogleLogin $gl)
     {
         $gl->logout();
         return redirect(route('ytb.login'));

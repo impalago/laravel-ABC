@@ -27,7 +27,8 @@ elixir(function(mix) {
             "/bootstrap/dist/css/bootstrap.min.css",
             "/bootstrap-material/dist/css/material.min.css",
             "/jgrowl/jquery.jgrowl.min.css",
-            "/jquery-confirm2/dist/jquery-confirm.min.css"
+            "/jquery-confirm2/dist/jquery-confirm.min.css",
+            "/bootstrap-social/bootstrap-social.css"
         ], 'public/css/dependencies.css', 'node_modules')
         .styles([
             "/style.css",
