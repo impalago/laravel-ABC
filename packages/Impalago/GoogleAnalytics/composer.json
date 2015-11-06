@@ -1,0 +1,20 @@
+{
+  "name": "impalago/googleAnalytics",
+  "description": "Laravel and Google Analytics",
+  "authors": [
+    {
+      "name": "Ivan Kolesnikov",
+      "email": "impalago@yandex.ru"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "laravel/framework": "5.1.*",
+    "google/apiclient": "1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Impalago\\GoogleAnalytics": "src/"
+    }
+  }
+}
