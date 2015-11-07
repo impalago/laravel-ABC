@@ -20,6 +20,10 @@ Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController
 Route::get('auth/facebook', ['as' => 'auth.facebook', 'uses' => 'Auth\AuthController@redirectToProvider']);
 Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
 
+// Google Auth
+Route::get('auth/google', ['as' => 'auth.google', 'uses' => 'Auth\AuthController@redirectToProvider']);
+Route::get('auth/google/callback', 'Auth\AuthController@handleProviderCallback');
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', function () {

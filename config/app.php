@@ -156,7 +156,7 @@ return [
          * My packages...
          */
         Impalago\Ytb\YtbServiceProvider::class,
-
+        Impalago\GoogleAnalytics\GoogleAnalyticsServiceProvider::class
 
     ],
 

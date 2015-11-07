@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Impalago\GoogleAnalytics;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +23,8 @@ class GoogleAnalyticsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('googleAnalytics', function() {
+            return new GoogleAnalytics;
+        });
     }
 }
