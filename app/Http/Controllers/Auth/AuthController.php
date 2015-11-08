@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
+use App\Provider;
 
 class AuthController extends Controller
 {
@@ -30,7 +31,6 @@ class AuthController extends Controller
     public function __construct()
     {
         //$this->middleware('guest', ['except' => 'getLogout']);
-        $this->urlSocialite = Request::segment(2);
     }
 
     /**
@@ -131,27 +131,29 @@ class AuthController extends Controller
     /**
      * Redirect the user to the Socialite authentication page.
      *
-     * @return Response
+     * @param $provider
+     * @return mixed
      */
-    public function redirectToProvider()
+    public function redirectToProvider($provider)
     {
-        return Socialite::driver($this->urlSocialite)->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
     /**
      * Obtain the user information from Socialite.
      *
+     * @param $provider
      * @return Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback($provider)
     {
         try {
-            $user = Socialite::driver($this->urlSocialite)->user();
+            $user = Socialite::driver($provider)->user();
         } catch (Exception $e) {
-            dd($e);
+            return redirect(route('auth.login'));
         }
-        dd($user);
-        $authUser = $this->findOrCreateUser($user);
+        //dd($user);
+        $authUser = $this->findOrCreateUser($user, $provider);
 
         Auth::login($authUser, true);
 
@@ -160,30 +162,46 @@ class AuthController extends Controller
 
     /**
      * Return user if exists; create and return if doesn't
+     * Create provider or ret
      *
-     * @param $facebookUser
+     * @param $providerUser
+     * @param $provider
      * @return User
      */
-    private function findOrCreateUser($facebookUser)
+    private function findOrCreateUser($providerUser, $provider)
     {
-        $authUser = User::where('facebook_id', $facebookUser->id)->first();
+        $providerId = $providerUser->getId();
 
-        if ($authUser) {
+        $authProvider = Provider::where('provider', $provider)->where('provider_id', $providerId)->first();
 
-            $authUser->facebook_token = $facebookUser->token;
-            $authUser->save();
-            return $authUser;
+        if ($authProvider) {
+            $authProvider->token = $providerUser->token;
+            $authProvider->save();
+            return User::find($authProvider['user_id']);
         }
 
-        return User::create([
-            'name' => $facebookUser->user['first_name'],
-            'surname' => $facebookUser->user['last_name'],
-            'email' => $facebookUser->user['email'],
-            'isActive' => 1,
-            'facebook_id' => $facebookUser->user['id'],
-            'facebook_token' => $facebookUser->token,
-            'avatar' => $facebookUser->avatar
+        $user = User::find($authProvider['user_id']);
+
+        if ($user) {
+            $userId = $user['id'];
+        } else {
+            $newUser = User::create([
+                'name' => $providerUser->getName(),
+                'email' => $providerUser->getEmail(),
+                'isActive' => 1,
+                'avatar' => $providerUser->getAvatar()
+            ]);
+            $userId = $newUser->id;
+        }
+
+        Provider::create([
+            'user_id' => $userId,
+            'provider' => $provider,
+            'provider_id' => $providerId,
+            'token' => $providerUser->token
         ]);
+
+        return User::find($userId);
     }
 
 

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Facebook;
 
+use App\Provider;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Services\FacebookLogin;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class FacebookController extends Controller
 {
@@ -17,6 +18,7 @@ class FacebookController extends Controller
     public function __construct(FacebookLogin $fb)
     {
         $this->fb = $fb;
+        $this->providerInfo = Provider::where('user_id', Auth::user()->id)->where('provider', 'facebook')->first();
     }
 
     /**
@@ -26,7 +28,12 @@ class FacebookController extends Controller
      */
     public function index()
     {
-        $pages = $this->listPages();
+        if ($this->listPages()) {
+            $pages = $this->listPages();
+        } else {
+            return view('errors.auth', ['provider' => 'facebook']);
+        }
+
         return view('control-panel/facebook.index', ['pages' => $pages]);
     }
 
@@ -37,17 +44,18 @@ class FacebookController extends Controller
      */
     public function listPages()
     {
-        $fb = $this->fb->getSetting();
-        $user_id = \Auth::user()->facebook_id;
-        if (\Auth::user()->facebook_token) {
-            $fb->setDefaultAccessToken(\Auth::user()->facebook_token);
+
+        if (isset($this->providerInfo['token'])) {
+            $fb = $this->fb->getSetting();
+            $fb->setDefaultAccessToken($this->providerInfo['token']);
         } else {
-            redirect(route('auth.login'));
+            return null;
         }
+
 
         $request = $fb->request(
             'GET',
-            '/' . $user_id . '/accounts'
+            '/' . $this->providerInfo['provider_id'] . '/accounts'
         );
         $response = $fb->getClient()->sendRequest($request);
         $graphObj = $response->getDecodedBody();
@@ -64,12 +72,17 @@ class FacebookController extends Controller
     public function getPage($id)
     {
 
-        $pages = $this->listPages();
-        $fb = $this->fb->getSetting();
-        if (\Auth::user()->facebook_token) {
-            $fb->setDefaultAccessToken(\Auth::user()->facebook_token);
+        if ($this->listPages()) {
+            $pages = $this->listPages();
         } else {
-            redirect(route('auth.login'));
+            return redirect()->route('auth.socialite', 'facebook');
+        }
+
+        if ($this->providerInfo) {
+            $fb = $this->fb->getSetting();
+            $fb->setDefaultAccessToken($this->providerInfo['token']);
+        } else {
+            return redirect()->route('auth.login');
         }
 
 
@@ -133,7 +146,7 @@ class FacebookController extends Controller
             '/' . $request->page_id,
             [
                 'fields' => 'access_token',
-                'access_token' => \Auth::user()->facebook_token
+                'access_token' => $this->providerInfo['token']
             ]
         );
         $pageToken = $pageInfo->getDecodedBody();
@@ -158,7 +171,7 @@ class FacebookController extends Controller
             );
 
         }
-        
+
         return redirect()->back();
     }
 
@@ -169,11 +182,12 @@ class FacebookController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function deletePostPage($id) {
+    public function deletePostPage($id)
+    {
 
         $fb = $this->fb->getSetting();
-        $fb->setDefaultAccessToken(\Auth::user()->facebook_token);
-        $fb->delete('/'.$id);
+        $fb->setDefaultAccessToken($this->providerInfo['token']);
+        $fb->delete('/' . $id);
 
         return redirect()->back();
     }

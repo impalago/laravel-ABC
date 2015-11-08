@@ -7,7 +7,13 @@ return [
         'client_secret' => 'ZF3AjO8F8wh5_AtBeIt4qY1E',
         'api_key' => 'AIzaSyAkPyZf8CR9Q1BESAqJXMK6MrVwoF4jdYU'
     ],
-    'analytics_scopes' => [
+    'google_scopes' => [
+        'https://www.googleapis.com/auth/contacts.readonly',
+        'https://www.google.com/m8/feeds',
+        'https://www.googleapis.com/auth/calendar',
+        'https://www.googleapis.com/auth/plus.me',
+        'https://www.googleapis.com/auth/plus.login',
+        'https://www.googleapis.com/auth/plus.profile.emails.read',
         'https://www.googleapis.com/auth/analytics',
         'https://www.googleapis.com/auth/analytics.edit',
         'https://www.googleapis.com/auth/analytics.manage.users'

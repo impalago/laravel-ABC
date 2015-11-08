@@ -16,18 +16,32 @@ Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@authenticate']);
 Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
 
-// Facebook Auth
-Route::get('auth/facebook', ['as' => 'auth.facebook', 'uses' => 'Auth\AuthController@redirectToProvider']);
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+// Socialite Auth
+Route::get('auth/{provider}', ['as' => 'auth.socialite', 'uses' => 'Auth\AuthController@redirectToProvider']);
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
-// Google Auth
-Route::get('auth/google', ['as' => 'auth.google', 'uses' => 'Auth\AuthController@redirectToProvider']);
-Route::get('auth/google/callback', 'Auth\AuthController@handleProviderCallback');
 
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', function () {
         return view('control-panel/dashboard.index');
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Errors
+    |--------------------------------------------------------------------------
+    */
+    Route::group(['prefix' => 'error'], function () {
+        // 401 Access denied
+        Route::get('401', ['as' => 'error.401', function () {
+            return view('errors.401');
+        }]);
+
+        // Socialize. Mandatory authorization
+        Route::get('auth', ['as' => 'error.auth', function () {
+            return view('errors.auth');
+        }]);
     });
 
     /*
@@ -49,20 +63,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('edit/{id}', ['as' => 'users.edit-post', 'uses' => 'Users\UsersController@update']);
         // Remove user
         Route::any('destroy', ['as' => 'users.destroy', 'uses' => 'Users\UsersController@destroy']);
-    });
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Errors
-    |--------------------------------------------------------------------------
-    */
-
-    Route::group(['prefix' => 'error'], function () {
-        // 401 Access denied
-        Route::get('401', ['as' => 'error.401', function () {
-            return view('errors.401');
-        }]);
     });
 
     /*
@@ -100,7 +100,6 @@ Route::group(['middleware' => 'auth'], function () {
     | Facebook
     |--------------------------------------------------------------------------
     */
-
     Route::group(['prefix' => 'facebook'], function () {
         Route::get('', ['as' => 'fb.index', 'uses' => 'Facebook\FacebookController@index']);
         Route::get('/page/{id}', ['as' => 'fb.page', 'uses' => 'Facebook\FacebookController@getPage']);
