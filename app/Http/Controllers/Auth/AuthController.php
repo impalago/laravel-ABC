@@ -136,7 +136,11 @@ class AuthController extends Controller
      */
     public function redirectToProvider($provider)
     {
-        return Socialite::driver($provider)->redirect();
+        if(count(config($provider.'.'.$provider.'_scopes'))){
+            return Socialite::driver($provider)->scopes(config($provider.'.'.$provider.'_scopes'))->redirect();
+        } else {
+            return Socialite::driver($provider)->redirect();
+        }
     }
 
     /**
@@ -152,7 +156,7 @@ class AuthController extends Controller
         } catch (Exception $e) {
             return redirect(route('auth.login'));
         }
-        //dd($user);
+
         $authUser = $this->findOrCreateUser($user, $provider);
 
         Auth::login($authUser, true);

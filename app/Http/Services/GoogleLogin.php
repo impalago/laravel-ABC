@@ -1,6 +1,6 @@
 <?php
 
-namespace Impalago\Ytb\Services;
+namespace App\Http\Services;
 
 use Illuminate\Support\Facades\Session;
 
@@ -14,15 +14,11 @@ class GoogleLogin
     public function __construct(\Google_Client $client)
     {
         $this->client = $client;
-
-        $this->client->setClientId(config('ytb.api.client_id'));
-        $this->client->setClientSecret(config('ytb.api.client_secret'));
-        $this->client->setDeveloperKey(config('ytb.api.api_key'));
-        $this->client->setRedirectUri(config('app.url') . "/ytb/callbackLogin");
-        $this->client->setScopes([
-            'https://www.googleapis.com/auth/youtube',
-            'https://www.googleapis.com/auth/youtube.force-ssl'
-        ]);
+        $this->client->setClientId(config('google.api.client_id'));
+        $this->client->setClientSecret(config('google.api.client_secret'));
+        $this->client->setDeveloperKey(config('google.api.api_key'));
+        $this->client->setRedirectUri(config('app.url') . "/google/callback");
+        $this->client->setScopes(config('google.google_scopes'));
         $this->client->setAccessType('offline');
     }
 
@@ -51,6 +47,7 @@ class GoogleLogin
         $this->client->authenticate($code);
         $token = $this->client->getAccessToken();
         Session::put('token', $token);
+
         return $token;
     }
 

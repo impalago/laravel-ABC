@@ -13,7 +13,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/">Dashboard</a></li>
                 <li><a href="{{ route('fb.index') }}">Facebook</a></li>
-                <li><a href="{{ route('ytb.index') }}">YouTube</a></li>
+                <li><a href="{{ route('google.index') }}">Google</a></li>
                 <li><a href="{{ route('users.index') }}">Users</a></li>
                 <li><a href="{{ route('settings.index') }}">Settings</a></li>
                 <li><a href="{{ route('auth.logout') }}">Logout</a></li>

@@ -28,6 +28,7 @@ class YtbController extends Controller
 
     /**
      * @param GoogleLogin $gl
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function callbackLogin(GoogleLogin $gl)
     {

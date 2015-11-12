@@ -145,6 +145,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\GoogleServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
@@ -214,6 +215,12 @@ return [
          * Dev...
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        /*
+         * My packages...
+         */
+        'GoogleAnalytics' => Impalago\GoogleAnalytics\Classes\Facades\GoogleAnalytics::class,
+
 
     ],
 

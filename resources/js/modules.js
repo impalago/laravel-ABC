@@ -1,6 +1,14 @@
 
 var commonProperties = {
 
+    /**
+     * Ajax Request
+     *
+     * @param The current element
+     * @param Callback
+     * @param dataType
+     * @param data
+     **/
     'queryAjax' : function($elem, callback,dataType, data) {
         $.ajax({
             type: $elem.data('method') ? $elem.data('method') : $elem.attr('method'),

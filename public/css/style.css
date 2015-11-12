@@ -344,6 +344,47 @@ body {
 .login .alert-warning {
     background-color: rgba(255, 87, 34, 0.55) !important;
 }
+
+.account {
+     padding: 0px !important;
+     margin-bottom: 10px !important;
+ }
+
+.account .panel-heading {
+    background-color: #F2F3F4 !important;
+    color: #283747 !important;
+    padding: 0px !important;
+}
+
+.account .panel-title a {
+    font-size: 18px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 15px ;
+}
+
+.account a:hover, .account a:focus {
+    text-decoration: none;
+    color: #34495E;
+}
+
+.account a .glyphicon {
+    margin-right: 10px;
+}
+
+.load-info{
+    text-align: center;
+}
+
+.show-info {
+    display: block;
+}
+
+.web-property {
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12) !important;
+    margin-bottom: 5px !important;
+}
 .login {
     margin-top: 50px;
 }

@@ -108,4 +108,29 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/page/delete-post/{id}', ['as' => 'fb.delete-post-page', 'uses' => 'Facebook\FacebookController@deletePostPage']);
     });
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Google Auth for Api
+    |--------------------------------------------------------------------------
+    */
+    Route::group(['prefix' => 'google'], function() {
+
+        Route::get('', ['as' => 'google.index', 'uses' => 'Google\GoogleController@index']);
+        Route::get('/login', ['as' => 'google.login', 'uses' => 'Google\GoogleController@login']);
+        Route::get('/logout', ['as' => 'google.logout', 'uses' => 'Google\GoogleController@logout']);
+        Route::get('/callback', ['as' => 'google.callback', 'uses' => 'Google\GoogleController@callbackLogin']);
+
+        /*
+        |--------------------------------------------------------------------------
+        | Google Analytics
+        |--------------------------------------------------------------------------
+        */
+        Route::group(['prefix' => 'analytics', 'middleware' => 'google'], function () {
+            Route::get('', ['as' => 'ga.index', 'uses' => 'Google\GoogleAnalyticsController@index']);
+            Route::get('account/{id}', ['as' => 'ga.account', 'uses' => 'Google\GoogleAnalyticsController@getAccount']);
+            Route::get('account/{id}/webproperties/{idProperty}', ['as' => 'ga.property', 'uses' => 'Google\GoogleAnalyticsController@getWebProperty']);
+        });
+    });
+
 });
