@@ -7,7 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
-use Impalago\GoogleAnalytics\Classes\Facades\GoogleAnalytics;
+use Illuminate\Support\Facades\Session;
 
 
 class GoogleAnalyticsController extends Controller
@@ -28,7 +28,16 @@ class GoogleAnalyticsController extends Controller
     public function index()
     {
         $analytics = $this->analytics;
-        $accounts = $analytics->management_accounts->listManagementAccounts();
+        try {
+            $accounts = $analytics->management_accounts->listManagementAccounts();
+        } catch (apiServiceException $e) {
+            Session::flash('error', 'There was an Analytics API service error ' . $e->getCode() . ':' . $e->getMessage());
+            return redirect('google.index');
+        } catch (apiException $e) {
+            Session::flash('error', 'There was a general API error ' . $e->getCode() . ':' . $e->getMessage());
+            return redirect('google.index');
+        }
+
         return view('control-panel/google/analytics.index', ['accounts' => $accounts->getItems()]);
 
     }
@@ -68,6 +77,16 @@ class GoogleAnalyticsController extends Controller
             array('dimensions' => 'ga:date'));
         //dd($results->getRows());
         return view('control-panel/google/analytics.profile', ['results' => $results, 'profile' => $profiles[0]]);
+    }
+
+    /**
+     * Show statistic for web property
+     * Called AJAX
+     *
+     */
+    public function getStatistic()
+    {
+        return 'ok!';
     }
 
 }

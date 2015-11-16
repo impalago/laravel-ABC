@@ -130,6 +130,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('', ['as' => 'ga.index', 'uses' => 'Google\GoogleAnalyticsController@index']);
             Route::get('account/{id}', ['as' => 'ga.account', 'uses' => 'Google\GoogleAnalyticsController@getAccount']);
             Route::get('account/{id}/webproperties/{idProperty}', ['as' => 'ga.property', 'uses' => 'Google\GoogleAnalyticsController@getWebProperty']);
+            Route::any('account/statistic', ['as' => 'ga.statistic', 'uses' => 'Google\GoogleAnalyticsController@getStatistic']);
         });
     });
 

@@ -18,7 +18,9 @@ elixir(function(mix) {
         '/bootstrap-material/dist/js/material.min.js',
         '/masonry-layout/dist/masonry.pkgd.js',
         '/jgrowl/jquery.jgrowl.min.js',
-        '/jquery-confirm2/dist/jquery-confirm.min.js'],
+        '/jquery-confirm2/dist/jquery-confirm.min.js',
+        '/moment/min/moment.min.js',
+        '/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'],
         'public/js/dependencies.js', 'node_modules')
 
         .scriptsIn("resources/js/", 'public/js/app.js')
@@ -28,7 +30,8 @@ elixir(function(mix) {
             "/bootstrap-material/dist/css/material.min.css",
             "/jgrowl/jquery.jgrowl.min.css",
             "/jquery-confirm2/dist/jquery-confirm.min.css",
-            "/bootstrap-social/bootstrap-social.css"
+            "/bootstrap-social/bootstrap-social.css",
+            "/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
         ], 'public/css/dependencies.css', 'node_modules')
         .styles([
             "/style.css",
