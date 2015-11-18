@@ -105,22 +105,72 @@ $(function () {
     /**
      * Get Statistic
      **/
-
-
-
     $('#sendData').on('submit', function (e) {
         e.preventDefault();
-        var startDate = $('#startDate').val(),
-            endDate = $('#endDate').val();
 
-        commonProperties.queryAjax($(this), function() {
-            alert(222);
-        });
+        commonProperties.queryAjax($(this), function(data) {
+            highchartsProperties.basicChart(
+                'chartViews',
+                'Statistics visits',
+                'Views',
+                'Date',
+                data.visitByDay
+            );
 
+            $('.sessions').html(data.generalStatistics['ga:sessions']);
+            $('.pageviews').html(data.generalStatistics['ga:pageviews']);
+            $('.sessionDuration').html(data.generalStatistics['ga:sessionDuration']);
+            $('.users').html(data.generalStatistics['ga:users']);
+            $('.generalStatistics').fadeIn();
+
+
+        }, 'json');
 
     });
 
 });
+
+var highchartsProperties = {
+
+    /**
+     * A chart is initialized by adding the JavaScript tag
+     *
+     * @param container - Id <div> container
+     * @param nameY
+     * @param nameX
+     * @param data
+     **/
+    'basicChart' : function(container, titleChart, nameY, nameX, data) {
+        new Highcharts.Chart({
+            chart: {
+                renderTo: container
+            },
+
+            title : {
+                text : titleChart
+            },
+            rangeSelector : {
+                selected : 1
+            },
+            yAxis: {
+                title: {
+                    text: nameY
+                }
+            },
+            xAxis: {
+                title: {
+                    text: nameX
+                },
+                type: 'datetime'
+            },
+            series : [{
+                name : 'Statistics visits',
+                data: data
+            }]
+        });
+    }
+};
+
 
 var commonProperties = {
 

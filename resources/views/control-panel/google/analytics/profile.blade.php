@@ -18,7 +18,7 @@
         </div>
         <div class="panel-body">
             <div class="row select-date">
-                {!! Form::open(array('route' => 'ga.statistic', 'id' => 'sendData')) !!}
+                {!! Form::open(array('route' => array('ga.statistic', $profile->getId()), 'id' => 'sendData')) !!}
                     <div class='col-md-3'>
                         <div class="form-group">
                             <div class='input-group date' id='startDateCont'>
@@ -48,5 +48,50 @@
             </div>
         </div>
     </div>
+
+    <div class="row generalStatistics">
+        <div class="col-md-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Sessions</h3>
+                </div>
+                <div class="panel-body sessions"></div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Pageviews</h3>
+                </div>
+                <div class="panel-body pageviews"></div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">The average duration of a session.</h3>
+                </div>
+                <div class="panel-body sessionDuration"></div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title ">Users</h3>
+                </div>
+                <div class="panel-body users"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"></h3>
+                </div>
+                <div class="panel-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chartViews"></div>
 
 @stop

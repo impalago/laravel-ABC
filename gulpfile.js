@@ -20,7 +20,10 @@ elixir(function(mix) {
         '/jgrowl/jquery.jgrowl.min.js',
         '/jquery-confirm2/dist/jquery-confirm.min.js',
         '/moment/min/moment.min.js',
-        '/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'],
+        '/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+        '/highcharts/highcharts.js',
+        '/highcharts/modules/exporting.js',
+        '/highcharts/themes/grid.js'],
         'public/js/dependencies.js', 'node_modules')
 
         .scriptsIn("resources/js/", 'public/js/app.js')

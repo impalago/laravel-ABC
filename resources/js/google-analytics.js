@@ -36,18 +36,26 @@ $(function () {
     /**
      * Get Statistic
      **/
-
-
-
     $('#sendData').on('submit', function (e) {
         e.preventDefault();
-        var startDate = $('#startDate').val(),
-            endDate = $('#endDate').val();
 
-        commonProperties.queryAjax($(this), function() {
-            alert(222);
-        });
+        commonProperties.queryAjax($(this), function(data) {
+            highchartsProperties.basicChart(
+                'chartViews',
+                'Statistics visits',
+                'Views',
+                'Date',
+                data.visitByDay
+            );
 
+            $('.sessions').html(data.generalStatistics['ga:sessions']);
+            $('.pageviews').html(data.generalStatistics['ga:pageviews']);
+            $('.sessionDuration').html(data.generalStatistics['ga:sessionDuration']);
+            $('.users').html(data.generalStatistics['ga:users']);
+            $('.generalStatistics').fadeIn();
+
+
+        }, 'json');
 
     });
 

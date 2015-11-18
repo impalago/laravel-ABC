@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Google;
 
-use App\Http\Services\GoogleLogin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Validator;
 
 
 class GoogleAnalyticsController extends Controller
@@ -83,10 +85,73 @@ class GoogleAnalyticsController extends Controller
      * Show statistic for web property
      * Called AJAX
      *
+     * @param $id
+     * @return $this
+     * @internal param Request $request
      */
-    public function getStatistic()
+    public function getStatistic($id)
     {
-        return 'ok!';
+        $data = Input::all();
+        $validate = Validator::make($data, array(
+            'startDate' => 'required|date_format:Y-m-d',
+            'endDate' => 'required|date_format:Y-m-d'
+        ));
+
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors());
+        }
+
+        $analytics = $this->analytics;
+
+        $visitByDay = $this->getVisitByDay($analytics, $id, $data['startDate'], $data['endDate']);
+        $generalStatistics = $this->getGeneralStatistics($analytics, $id, $data['startDate'], $data['endDate']);
+        //dd($generalStatistics);
+
+        return response()->json(array('visitByDay' => $visitByDay, 'generalStatistics' => $generalStatistics));
+    }
+
+    /**
+     * Get statistic visits by day for the selected period
+     *
+     * @param $analytics
+     * @param $id
+     * @param $startDate
+     * @param $endDate
+     * @return \Illuminate\Http\JsonResponse
+     */
+    private function getVisitByDay($analytics, $id, $startDate, $endDate) {
+        $results = $analytics->data_ga->get(
+            'ga:' . $id,
+            $startDate,
+            $endDate,
+            'ga:sessions',
+            array('dimensions' => 'ga:date')
+        );
+        $response = [];
+        foreach($results->getRows() as $key => $row) {
+            $response[$key] = array((strtotime($row[0]) * 1000), ((int) $row[1]));
+        }
+
+        return $response;
+    }
+
+    /**
+     * Get general statistics for the selected period
+     *
+     * @param $analytics
+     * @param $id
+     * @param $startDate
+     * @param $endDate
+     * @return $results
+     */
+    private function getGeneralStatistics($analytics, $id, $startDate, $endDate) {
+        $results = $analytics->data_ga->get(
+            'ga:' . $id,
+            $startDate,
+            $endDate,
+            'ga:sessions,ga:sessionDuration,ga:users,ga:newUsers,ga:pageviews'
+        );
+        return str_replace('ga:', '', $results->getTotalsForAllResults());
     }
 
 }
