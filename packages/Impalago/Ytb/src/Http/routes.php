@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 |
 */
-Route::group(['prefix' => 'ytb', 'namespace' => 'Impalago\Ytb\Http\Controllers', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'youtube', 'namespace' => 'Impalago\Ytb\Http\Controllers', 'middleware' => 'auth'], function () {
 
     Route::get('/', ['as' => 'ytb.index', 'uses' => 'YoutubeController@index']);
     Route::get('/video/{id}', ['as' => 'ytb.video', 'uses' => 'YoutubeController@getVideo']);
@@ -14,6 +14,7 @@ Route::group(['prefix' => 'ytb', 'namespace' => 'Impalago\Ytb\Http\Controllers',
     Route::get('/logout', ['as' => 'ytb.logout', 'uses' => 'YtbController@logout']);
     Route::get('/callbackLogin', ['as' => 'ytb.callback', 'uses' => 'YtbController@callbackLogin']);
 
-    Route::get('/subscriptions', ['as' => 'ytb.subscriptions', 'uses' => 'YoutubeController@getSubscriptionsList']);
+    Route::get('/channel/{id}', ['as' => 'ytb.channel', 'uses' => 'YoutubeController@getChannelPlaylist']);
+    Route::get('/playlist/{id}', ['as' => 'ytb.playlist', 'uses' => 'YoutubeController@getVideoPlaylist']);
 
 });

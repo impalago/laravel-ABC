@@ -25,6 +25,10 @@ $(function() {
         placement: 'left'
     });
 
+    $('.tt-on-bottom').tooltip({
+        placement: 'bottom'
+    });
+
     $('.disabled').on('click', function(e) {
         e.preventDefault();
     });

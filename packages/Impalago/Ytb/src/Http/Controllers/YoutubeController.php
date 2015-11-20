@@ -33,16 +33,19 @@ class YoutubeController extends Controller
 
         //dd($subscriptionsItems);
 
-        //$options = ['chart' => 'mostPopular', 'maxResults' => 15, 'videoCategoryId' => '10'];
-        $options = ['playlistId' => 'PLlqZM4covn1GeiFmvbi8YppviPVUH2Q_9', 'maxResults' => '12'];
+        $options = ['chart' => 'mostPopular', 'maxResults' => 15, 'videoCategoryId' => '10'];
         if (Input::has('page')) {
             $options['pageToken'] = Input::get('page');
         }
 
         $youtube = \App::make('youtube');
         //$videos = $youtube->videos->listVideos('id, snippet, statistics', $options);
-        $videos = $youtube->playlistItems->listPlaylistItems('id, snippet', $options);
-        return view(config('ytb.views.list'), ['videos' => $videos, 'subscriptionsItems' => $subscriptionsItems]);
+        $videos = $youtube->videos->listVideos('id, snippet', $options);
+        return view(config('ytb.views.list'), [
+            'videos' => $videos,
+            'subscriptionsItems' => $subscriptionsItems,
+            'subscriptionsNextPage' => $subscriptionsNextPage
+        ]);
     }
 
     /**
@@ -94,6 +97,7 @@ class YoutubeController extends Controller
 
         $youtube = \App::make('youtube');
         $subscriptions = $youtube->subscriptions->listSubscriptions('id, snippet', ['mine' => true, 'maxResults'=>'20']);
+        //dd($subscriptions);
         $subscriptionsItems = $subscriptions->getItems();
         $subscriptionsNextPage = $subscriptions->getNextPageToken();
 
@@ -101,6 +105,47 @@ class YoutubeController extends Controller
             'subscriptionsItems' => $subscriptionsItems,
             'subscriptionsNextPage' => $subscriptionsNextPage
         );
+    }
+
+    /**
+     * Show info channel adn playlists channel
+     *
+     * @param GoogleLogin $gl
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
+    public function getChannelPlaylist(GoogleLogin $gl, $id) {
+
+        if (!$gl->isLoggedIn()) {
+            return redirect(route('ytb.login'));
+        }
+
+        $youtube = \App::make('youtube');
+
+        $subscriptions = $this->getSubscriptionsList();
+        $subscriptionsItems = $subscriptions['subscriptionsItems'];
+        $subscriptionsNextPage = $subscriptions['subscriptionsNextPage'];
+
+        $channel = $youtube->channels->listChannels('snippet', ['id' => $id]);
+        $channelInfo = $channel->getItems();
+
+        $playlists = $youtube->playlists->listPlaylists('snippet,contentDetails', ['channelId' => $id, 'maxResults' => 50]);
+        $playlistsList = $playlists->getItems();
+
+        if(count($channelInfo) == 0) {
+            abort(404);
+        }
+
+        return view('ytb::channel', [
+            'channelInfo' => $channelInfo[0]['snippet'],
+            'playlistsList' => $playlistsList,
+            'subscriptionsItems' => $subscriptionsItems,
+            'subscriptionsNextPage' => $subscriptionsNextPage
+        ]);
+    }
+
+    public function getVideoPlaylist () {
+        return 'ok';
     }
 
 }

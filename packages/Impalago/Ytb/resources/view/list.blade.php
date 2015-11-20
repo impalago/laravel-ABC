@@ -18,12 +18,12 @@
         @foreach($videos as $video)
             <div class="col-lg-3 col-md-4 col-sm-6 grid-item">
                 <div class="thumbnail">
-                    <a href="/ytb/video/{{ $video['snippet']['resourceId']['videoId'] }}" title="{{ $video['snippet']['title'] }}">
+                    <a href="{{ route('ytb.video', $video->getId()) }}" title="{{ $video['snippet']['title'] }}">
                         <img src="{{ $video['snippet']['thumbnails']['medium']['url'] }}" alt="">
                     </a>
                     <div class="caption">
                         <h3>
-                            <a href="/ytb/video/{{ $video['snippet']['resourceId']['videoId'] }}" title="{{ $video['snippet']['title'] }}">{{ $video['snippet']['title'] }}</a>
+                            <a href="{{ route('ytb.video', $video->getId()) }}" title="{{ $video['snippet']['title'] }}">{{ $video['snippet']['title'] }}</a>
                         </h3>
                     </div>
                 </div>
