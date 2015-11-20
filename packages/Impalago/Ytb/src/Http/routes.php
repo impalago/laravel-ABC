@@ -14,4 +14,6 @@ Route::group(['prefix' => 'ytb', 'namespace' => 'Impalago\Ytb\Http\Controllers',
     Route::get('/logout', ['as' => 'ytb.logout', 'uses' => 'YtbController@logout']);
     Route::get('/callbackLogin', ['as' => 'ytb.callback', 'uses' => 'YtbController@callbackLogin']);
 
+    Route::get('/subscriptions', ['as' => 'ytb.subscriptions', 'uses' => 'YoutubeController@getSubscriptionsList']);
+
 });

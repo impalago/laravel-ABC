@@ -26,6 +26,13 @@ class YoutubeController extends Controller
             return redirect(route('ytb.login'));
         }
 
+        $subscriptions = $this->getSubscriptionsList();
+
+        $subscriptionsItems = $subscriptions['subscriptionsItems'];
+        $subscriptionsNextPage = $subscriptions['subscriptionsNextPage'];
+
+        //dd($subscriptionsItems);
+
         //$options = ['chart' => 'mostPopular', 'maxResults' => 15, 'videoCategoryId' => '10'];
         $options = ['playlistId' => 'PLlqZM4covn1GeiFmvbi8YppviPVUH2Q_9', 'maxResults' => '12'];
         if (Input::has('page')) {
@@ -35,7 +42,7 @@ class YoutubeController extends Controller
         $youtube = \App::make('youtube');
         //$videos = $youtube->videos->listVideos('id, snippet, statistics', $options);
         $videos = $youtube->playlistItems->listPlaylistItems('id, snippet', $options);
-        return view(config('ytb.views.list'), ['videos' => $videos]);
+        return view(config('ytb.views.list'), ['videos' => $videos, 'subscriptionsItems' => $subscriptionsItems]);
     }
 
     /**
@@ -76,6 +83,24 @@ class YoutubeController extends Controller
         }
 
         return view(config('ytb.views.video'), ['video' => $video, 'comments' => $listComments]);
+    }
+
+    /**
+     * Get list subscriptions for left list in template
+     *
+     * @return array
+     */
+    private function getSubscriptionsList() {
+
+        $youtube = \App::make('youtube');
+        $subscriptions = $youtube->subscriptions->listSubscriptions('id, snippet', ['mine' => true, 'maxResults'=>'20']);
+        $subscriptionsItems = $subscriptions->getItems();
+        $subscriptionsNextPage = $subscriptions->getNextPageToken();
+
+        return array(
+            'subscriptionsItems' => $subscriptionsItems,
+            'subscriptionsNextPage' => $subscriptionsNextPage
+        );
     }
 
 }

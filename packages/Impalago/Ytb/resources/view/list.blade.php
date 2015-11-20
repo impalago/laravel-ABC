@@ -1,7 +1,7 @@
 @extends(config('ytb.views.layout'))
 
 @section('left-panel')
-    @include('layouts/blocks.left-panel')
+    @include('ytb::blocks.left-panel')
 @stop
 
 @section(config('ytb.sections.content'))
