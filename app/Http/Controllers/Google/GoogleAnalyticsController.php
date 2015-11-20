@@ -4,13 +4,9 @@ namespace App\Http\Controllers\Google;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\Validator;
-
+use App\Http\Requests\GoogleAnalytics;
 
 class GoogleAnalyticsController extends Controller
 {
@@ -67,45 +63,28 @@ class GoogleAnalyticsController extends Controller
     public function getWebProperty($idAccount, $idProperty)
     {
         $analytics = $this->analytics;
-        $date = Carbon::now();
+
         $profiles = $analytics->management_profiles
             ->listManagementProfiles($idAccount, $idProperty);
         $profiles = $profiles->getItems();
-        $results = $analytics->data_ga->get(
-            'ga:' . $profiles[0]->getId(),
-            $date->year . '-' . $date->month . '-01',
-            'today',
-            'ga:visits,ga:pageviews',
-            array('dimensions' => 'ga:date'));
-        //dd($results->getRows());
-        return view('control-panel/google/analytics.profile', ['results' => $results, 'profile' => $profiles[0]]);
+
+        return view('control-panel/google/analytics.profile', ['profile' => $profiles[0]]);
     }
+
 
     /**
      * Show statistic for web property
-     * Called AJAX
+     * Call AJAX
      *
+     * @param GoogleAnalytics $request
      * @param $id
-     * @return $this
-     * @internal param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function getStatistic($id)
+    public function getStatistic(GoogleAnalytics $request, $id)
     {
-        $data = Input::all();
-        $validate = Validator::make($data, array(
-            'startDate' => 'required|date_format:Y-m-d',
-            'endDate' => 'required|date_format:Y-m-d'
-        ));
-
-        if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate->errors());
-        }
-
         $analytics = $this->analytics;
-
-        $visitByDay = $this->getVisitByDay($analytics, $id, $data['startDate'], $data['endDate']);
-        $generalStatistics = $this->getGeneralStatistics($analytics, $id, $data['startDate'], $data['endDate']);
-        //dd($generalStatistics);
+        $visitByDay = $this->getVisitByDay($analytics, $id, $request->startDate, $request->endDate);
+        $generalStatistics = $this->getGeneralStatistics($analytics, $id, $request->startDate, $request->endDate);
 
         return response()->json(array('visitByDay' => $visitByDay, 'generalStatistics' => $generalStatistics));
     }
@@ -142,14 +121,14 @@ class GoogleAnalyticsController extends Controller
      * @param $id
      * @param $startDate
      * @param $endDate
-     * @return $results
+     * @return mixed $results
      */
     private function getGeneralStatistics($analytics, $id, $startDate, $endDate) {
         $results = $analytics->data_ga->get(
             'ga:' . $id,
             $startDate,
             $endDate,
-            'ga:sessions,ga:sessionDuration,ga:users,ga:newUsers,ga:pageviews'
+            'ga:sessions,ga:avgSessionDuration,ga:users,ga:newUsers,ga:pageviews'
         );
         return str_replace('ga:', '', $results->getTotalsForAllResults());
     }

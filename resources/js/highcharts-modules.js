@@ -37,5 +37,46 @@ var highchartsProperties = {
                 data: data
             }]
         });
+    },
+
+    /**
+     * Pie charts
+     *
+     * @param container - Id <div> container
+     * @param titleChart
+     * @param seriesName
+     * @param seriesData - json
+     **/
+    'pieChart' : function(container, titleChart, seriesName, seriesData) {
+        new Highcharts.Chart({
+            chart: {
+                renderTo: container,
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: titleChart
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: seriesName,
+                colorByPoint: true,
+                data: seriesData
+            }]
+        });
     }
 };

@@ -20,6 +20,7 @@ elixir(function(mix) {
         '/jgrowl/jquery.jgrowl.min.js',
         '/jquery-confirm2/dist/jquery-confirm.min.js',
         '/moment/min/moment.min.js',
+        '/moment-duration-format/lib/moment-duration-format.js',
         '/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
         '/highcharts/highcharts.js',
         '/highcharts/modules/exporting.js',

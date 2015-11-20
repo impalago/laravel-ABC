@@ -8,7 +8,7 @@
 
     <div class="container-fluid">
         <div class="row page-header">
-            <h1>Statistics profile <small><a href="{{ $profile->getWebsiteUrl() }}" target="_blank">{{ str_replace('http://', '', $profile->getWebsiteUrl()) }}</a></small></h1>
+            <h1><small><a href="{{ $profile->getWebsiteUrl() }}" target="_blank">{{  $profile->getWebsiteUrl() }}</a></small></h1>
         </div>
     </div>
 
@@ -50,48 +50,58 @@
     </div>
 
     <div class="row generalStatistics">
-        <div class="col-md-2">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Sessions</h3>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6 stat-item">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Sessions</h3>
+                        </div>
+                        <div class="panel-body sessions"></div>
+                    </div>
                 </div>
-                <div class="panel-body sessions"></div>
+                <div class="col-md-6 stat-item">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Pageviews</h3>
+                        </div>
+                        <div class="panel-body pageviews"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 stat-item">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Avg. Session Duration</h3>
+                        </div>
+                        <div class="panel-body sessionDuration"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 stat-item">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title ">Users</h3>
+                        </div>
+                        <div class="panel-body users"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-4 stat-item">
             <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Pageviews</h3>
+                <div class="panel-body">
+                    <div id="visitsChart"></div>
                 </div>
-                <div class="panel-body pageviews"></div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">The average duration of a session.</h3>
-                </div>
-                <div class="panel-body sessionDuration"></div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title ">Users</h3>
-                </div>
-                <div class="panel-body users"></div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title"></h3>
-                </div>
-                <div class="panel-body"></div>
             </div>
         </div>
     </div>
 
-    <div id="chartViews"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="chartViews"></div>
+        </div>
+    </div>
+
 
 @stop

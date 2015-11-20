@@ -23,5 +23,18 @@ var commonProperties = {
                 }
             }
         });
+    },
+
+    /**
+     * Ajax Preloader
+     *
+     **/
+    'ajaxPreloader' : function() {
+        $(document).ajaxStart(function() {
+            $('#preloader').fadeIn('slow');
+        }).ajaxComplete(function(){
+            $('#preloader').fadeOut('slow');
+        });
     }
+
 };

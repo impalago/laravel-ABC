@@ -39,7 +39,18 @@ $(function () {
     $('#sendData').on('submit', function (e) {
         e.preventDefault();
 
+        commonProperties.ajaxPreloader();
         commonProperties.queryAjax($(this), function(data) {
+
+            var time = parseInt(data.generalStatistics['ga:avgSessionDuration']);
+            time = moment.duration(time, 'seconds').format("hh:mm:ss", { trim: false });
+
+            var users = data.generalStatistics['ga:users'],
+                newUsers = data.generalStatistics['ga:newUsers'],
+                sessions = data.generalStatistics['ga:sessions'],
+                pageviews = data.generalStatistics['ga:pageviews'],
+                returnUsers = sessions - newUsers;
+
             highchartsProperties.basicChart(
                 'chartViews',
                 'Statistics visits',
@@ -48,13 +59,26 @@ $(function () {
                 data.visitByDay
             );
 
-            $('.sessions').html(data.generalStatistics['ga:sessions']);
-            $('.pageviews').html(data.generalStatistics['ga:pageviews']);
-            $('.sessionDuration').html(data.generalStatistics['ga:sessionDuration']);
-            $('.users').html(data.generalStatistics['ga:users']);
+            highchartsProperties.pieChart(
+                'visitsChart',
+                'Visits',
+                'Visits',
+                [{
+                    name: "New Visitor",
+                    y: parseInt(users)
+                }, {
+                    name: "Returning Visitor",
+                    y: parseInt(returnUsers),
+                    sliced: true
+                }]
+            );
+
+            $('.sessions').html(sessions);
+            $('.pageviews').html(pageviews);
+            $('.sessionDuration').html(time);
+            $('.users').html(users);
             $('.generalStatistics').fadeIn();
-
-
+            $('#visitsChart, #chartViews').highcharts().reflow();
         }, 'json');
 
     });
