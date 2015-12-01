@@ -2,9 +2,9 @@
 
     @include('layouts/blocks.profile-left-block')
 
-    @if(isset($subscriptionsItems))
+    @if(isset($subscriptions))
         <h2 class="list-head">Subscriptions</h2>
-       @foreach($subscriptionsItems as $subItem)
+       @foreach($subscriptions->getItems() as $subItem)
             <div class="media subscriptions-list">
                 <a class="pull-left" href="{{ route('ytb.channel', $subItem['snippet']['resourceId']['channelId']) }}">
                     <img class="media-object" src="{{ $subItem['snippet']['thumbnails']['default']['url'] }}" alt="{{ $subItem['snippet']['title'] }}">
@@ -18,9 +18,9 @@
        @endforeach
     @endif
 
-    @if(isset($subscriptionsNextPage))
+    @if($subscriptions->getNextPageToken())
         <div class="text-center">
-            <a href="" class="btn btn-primary btn-xs">show more</a>
+            <a href="#" data-page-token="{{ $subscriptions->getNextPageToken() }}" class="btn btn-primary btn-xs subscriptions-mode">show more</a>
         </div>
     @endif
 </div>

@@ -17,13 +17,11 @@
             </div>
         </div>
 
-        @if($errors->all())
+        @if(Session::has('flash_error'))
             <div class="alert alert-dismissable alert-danger">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <ul class="list-group">
-                    @foreach ($errors->all() as $error)
-                        <li class="list-group-item">{{ $error }}</li>
-                    @endforeach
+                    <li class="list-group-item">{{ Session::get('flash_error') }}</li>
                 </ul>
             </div>
         @endif
@@ -61,10 +59,12 @@
                             <div class="panel-footer ">
                                 <div class="row">
                                     <div class="col-md-6 ">
-                                        <a href="{{ $post['link'] }}" target="_blank">Go to the post</a>
+                                        @if(!empty($post['link']))
+                                            <a href="{{ $post['link'] }}" target="_blank">Go to the post</a>
+                                        @endif
                                     </div>
                                     <div class="col-md-6 text-right">
-                                        <a href="{{ route('fb.delete-post-page', $post['id']) }}">Delete</a>
+                                        <a href="{{ route('fb.delete-post-page', array($post['id'], $page_token)) }}"  class="btn btn-danger btn-sm delete-post">Delete</a>
                                     </div>
                                 </div>
 

@@ -12,15 +12,4 @@
         </div>
     </div>
 
-    @if($errors->all())
-        <div class="alert alert-dismissable alert-danger">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <ul class="list-group">
-                @foreach ($errors->all() as $error)
-                    <li class="list-group-item">{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
 @stop

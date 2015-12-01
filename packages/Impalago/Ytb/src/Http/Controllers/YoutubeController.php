@@ -13,6 +13,12 @@ use Impalago\Ytb\Services\GoogleLogin;
 class YoutubeController extends Controller
 {
 
+
+    public function __construct()
+    {
+        $this->youtube = \App::make('youtube');
+    }
+
     /**
      * A method of retrieving the list of videos
      *
@@ -21,30 +27,18 @@ class YoutubeController extends Controller
      */
     public function index(GoogleLogin $gl)
     {
-
         if (!$gl->isLoggedIn()) {
             return redirect(route('ytb.login'));
         }
 
-        $subscriptions = $this->getSubscriptionsList();
-
-        $subscriptionsItems = $subscriptions['subscriptionsItems'];
-        $subscriptionsNextPage = $subscriptions['subscriptionsNextPage'];
-
-        //dd($subscriptionsItems);
-
-        $options = ['chart' => 'mostPopular', 'maxResults' => 15, 'videoCategoryId' => '10'];
+        $options = ['chart' => 'mostPopular', 'maxResults' => 8, 'videoCategoryId' => '10'];
         if (Input::has('page')) {
             $options['pageToken'] = Input::get('page');
         }
 
-        $youtube = \App::make('youtube');
-        //$videos = $youtube->videos->listVideos('id, snippet, statistics', $options);
-        $videos = $youtube->videos->listVideos('id, snippet', $options);
+        $videos = $this->youtube->videos->listVideos('id, snippet', $options);
         return view(config('ytb.views.list'), [
-            'videos' => $videos,
-            'subscriptionsItems' => $subscriptionsItems,
-            'subscriptionsNextPage' => $subscriptionsNextPage
+            'videos' => $videos
         ]);
     }
 
@@ -62,11 +56,9 @@ class YoutubeController extends Controller
             return redirect(route('ytb.login'));
         }
 
-        $youtube = \App::make('youtube');
-
         // Getting information about a video
-        $video = $youtube->videos->listVideos('id, snippet, player, contentDetails, statistics, status',
-        ['maxResults' => 1, 'id' => $id]);
+        $video = $this->youtube->videos->listVideos('id, snippet, player, contentDetails, statistics, status',
+            ['maxResults' => 1, 'id' => $id]);
 
         if (!count($video->getItems())) {
             return redirect(route('ytb.index'));
@@ -77,34 +69,15 @@ class YoutubeController extends Controller
 
         // Getting comments to the current video
         if ($video["statistics"]["commentCount"]) {
-            $comments = $youtube->commentThreads->listCommentThreads('snippet',
-            ['videoId' => $id, 'textFormat' => 'plainText']);
+            $comments = $this->youtube->commentThreads->listCommentThreads('snippet',
+                ['videoId' => $id, 'textFormat' => 'plainText']);
 
-            $listComments = array_map(function($comment) {
+            $listComments = array_map(function ($comment) {
                 return $comment['snippet']['topLevelComment']['snippet'];
             }, $comments['modelData']['items']);
         }
 
         return view(config('ytb.views.video'), ['video' => $video, 'comments' => $listComments]);
-    }
-
-    /**
-     * Get list subscriptions for left list in template
-     *
-     * @return array
-     */
-    private function getSubscriptionsList() {
-
-        $youtube = \App::make('youtube');
-        $subscriptions = $youtube->subscriptions->listSubscriptions('id, snippet', ['mine' => true, 'maxResults'=>'20']);
-        //dd($subscriptions);
-        $subscriptionsItems = $subscriptions->getItems();
-        $subscriptionsNextPage = $subscriptions->getNextPageToken();
-
-        return array(
-            'subscriptionsItems' => $subscriptionsItems,
-            'subscriptionsNextPage' => $subscriptionsNextPage
-        );
     }
 
     /**
@@ -114,38 +87,67 @@ class YoutubeController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function getChannelPlaylist(GoogleLogin $gl, $id) {
-
+    public function getChannelPlaylist(GoogleLogin $gl, $id)
+    {
         if (!$gl->isLoggedIn()) {
             return redirect(route('ytb.login'));
         }
 
-        $youtube = \App::make('youtube');
-
-        $subscriptions = $this->getSubscriptionsList();
-        $subscriptionsItems = $subscriptions['subscriptionsItems'];
-        $subscriptionsNextPage = $subscriptions['subscriptionsNextPage'];
-
-        $channel = $youtube->channels->listChannels('snippet', ['id' => $id]);
+        $channel = $this->youtube->channels->listChannels('snippet', ['id' => $id]);
         $channelInfo = $channel->getItems();
 
-        $playlists = $youtube->playlists->listPlaylists('snippet,contentDetails', ['channelId' => $id, 'maxResults' => 50]);
-        $playlistsList = $playlists->getItems();
+        $options = ['channelId' => $id, 'maxResults' => 20];
+        if (Input::has('page')) {
+            $options['pageToken'] = Input::get('page');
+        }
+        $playlists = $this->youtube->playlists->listPlaylists('snippet,contentDetails', $options);
 
-        if(count($channelInfo) == 0) {
+        if (count($channelInfo) == 0) {
             abort(404);
         }
 
         return view('ytb::channel', [
             'channelInfo' => $channelInfo[0]['snippet'],
-            'playlistsList' => $playlistsList,
-            'subscriptionsItems' => $subscriptionsItems,
-            'subscriptionsNextPage' => $subscriptionsNextPage
+            'playlists' => $playlists
         ]);
     }
 
-    public function getVideoPlaylist () {
-        return 'ok';
+    /**
+     * Get the list of videos to the playlist
+     *
+     * @param GoogleLogin $gl
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
+    public function getVideoPlaylist(GoogleLogin $gl, $id)
+    {
+
+        if (!$gl->isLoggedIn()) {
+            return redirect(route('ytb.login'));
+        }
+
+        $playlist = $this->youtube->playlists->listPlaylists('snippet', ['id' => $id]);
+
+        $options = ['maxResults' => 8, 'playlistId' => $id];
+        if (Input::has('page')) {
+            $options['pageToken'] = Input::get('page');
+        }
+        $videos = $this->youtube->playlistItems->listPlaylistItems('id, snippet', $options);
+        return view(config('ytb.views.list'), [
+            'videos' => $videos,
+            'pageInfo' => $playlist
+        ]);
+    }
+
+    public function getSubscriptionsPage($pageToken)
+    {
+        $options = ['mine' => true, 'maxResults' => '20'];
+        if ($pageToken) {
+            $options['pageToken'] = $pageToken;
+        }
+        $subscriptions = $this->youtube->subscriptions->listSubscriptions('id, snippet', $options);
+
+        return view('ytb::blocks.ajax-load-subscriptions', ['subscriptions' => $subscriptions]);
     }
 
 }

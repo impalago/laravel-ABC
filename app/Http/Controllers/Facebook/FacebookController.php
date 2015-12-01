@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Facebook;
 
 use App\Provider;
+use Facebook\Exceptions\FacebookResponseException;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Services\FacebookLogin;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
 
 class FacebookController extends Controller
 {
@@ -88,10 +91,13 @@ class FacebookController extends Controller
 
         $requestPage = $fb->sendRequest(
             'GET',
-            '/' . $id
+            '/' . $id,
+            ['fields' => 'access_token,id,name']
         );
+
         $page = $requestPage->getDecodedBody();
         $pageName = $page['name'];
+        $pageToken = $page['access_token'];
 
         $request = $fb->sendRequest(
             'GET',
@@ -124,6 +130,7 @@ class FacebookController extends Controller
             'pages' => $pages,
             'posts' => $pagePosts,
             'page_name' => $pageName,
+            'page_token' => $pageToken,
             'page_id' => $id
         ]);
     }
@@ -152,24 +159,32 @@ class FacebookController extends Controller
         $pageToken = $pageInfo->getDecodedBody();
         $fb->setDefaultAccessToken($pageToken['access_token']);
         if (empty($request->image)) {
+            try {
+                $fb->post('/' . $request->page_id . '/feed',
+                    [
+                        'message' => $request->message,
+                        'link' => $request->link
+                    ]
+                );
 
-            $fb->post('/' . $request->page_id . '/feed',
-                [
-                    'message' => $request->message,
-                    'link' => $request->link
-                ]
-            );
-
+            } catch (FacebookResponseException $e) {
+                Session::flash('flash_error', 'There was a general API error ' . $e->getCode() . ':' . $e->getMessage());
+                return redirect()->back();
+            }
         } else {
 
-            $fb->post('/' . $request->page_id . '/photos',
-                [
-                    'message' => $request->message,
-                    'link' => $request->link,
-                    'source' => $fb->fileToUpload($request->file('image')->getRealPath())
-                ]
-            );
-
+            try {
+                $fb->post('/' . $request->page_id . '/photos',
+                    [
+                        'message' => $request->message,
+                        'link' => $request->link,
+                        'source' => $fb->fileToUpload($request->file('image')->getRealPath())
+                    ]
+                );
+            } catch (FacebookResponseException $e) {
+                Session::flash('flash_error', 'There was a general API error ' . $e->getCode() . ':' . $e->getMessage());
+                return redirect()->back();
+            }
         }
 
         return redirect()->back();
@@ -182,13 +197,16 @@ class FacebookController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function deletePostPage($id)
+    public function deletePostPage($id, $page_token)
     {
-
         $fb = $this->fb->getSetting();
         $fb->setDefaultAccessToken($this->providerInfo['token']);
-        $fb->delete('/' . $id);
-
+        try {
+            $fb->delete('/' . $id, [], $page_token);
+        } catch (FacebookResponseException $e) {
+            Session::flash('flash_error', 'There was a general API error ' . $e->getCode() . ':' . $e->getMessage());
+            return redirect()->back();
+        }
         return redirect()->back();
     }
 

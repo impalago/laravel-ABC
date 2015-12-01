@@ -25,7 +25,6 @@ class UsersRequest extends Request
     {
         return [
             'name' => 'required',
-            'surname' => 'required',
             'email' => 'required|email',
         ];
     }

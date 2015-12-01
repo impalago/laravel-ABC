@@ -11,6 +11,14 @@
 |
 */
 
+Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect(route('control.index'));
+    } else {
+        return view('home-screen.index');
+    }
+});
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@authenticate']);
@@ -20,12 +28,11 @@ Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController
 Route::get('auth/{provider}', ['as' => 'auth.socialite', 'uses' => 'Auth\AuthController@redirectToProvider']);
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
+Route::group(['prefix' => 'control', 'middleware' => 'auth'], function () {
 
-Route::group(['middleware' => 'auth'], function () {
-
-    Route::get('/', function () {
+    Route::get('/', ['as' => 'control.index', function () {
         return view('control-panel/dashboard.index');
-    });
+    }]);
 
     /*
     |--------------------------------------------------------------------------
@@ -101,11 +108,11 @@ Route::group(['middleware' => 'auth'], function () {
     |--------------------------------------------------------------------------
     */
     Route::group(['prefix' => 'facebook'], function () {
-        Route::get('', ['as' => 'fb.index', 'uses' => 'Facebook\FacebookController@index']);
+        Route::get('', ['as' => 'facebook.index', 'uses' => 'Facebook\FacebookController@index']);
         Route::get('/page/{id}', ['as' => 'fb.page', 'uses' => 'Facebook\FacebookController@getPage']);
 
         Route::post('/page/create-post', ['as' => 'fb.create-post-page', 'uses' => 'Facebook\FacebookController@createPostPage']);
-        Route::get('/page/delete-post/{id}', ['as' => 'fb.delete-post-page', 'uses' => 'Facebook\FacebookController@deletePostPage']);
+        Route::get('/page/delete-post/{id}/{page_token}', ['as' => 'fb.delete-post-page', 'uses' => 'Facebook\FacebookController@deletePostPage']);
     });
 
 
@@ -114,7 +121,7 @@ Route::group(['middleware' => 'auth'], function () {
     | Google Auth for Api
     |--------------------------------------------------------------------------
     */
-    Route::group(['prefix' => 'google'], function() {
+    Route::group(['prefix' => 'google'], function () {
 
         Route::get('', ['as' => 'google.index', 'uses' => 'Google\GoogleController@index']);
         Route::get('/login', ['as' => 'google.login', 'uses' => 'Google\GoogleController@login']);

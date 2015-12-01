@@ -34,6 +34,7 @@ class GoogleServiceProvider extends ServiceProvider
         });
 
         $this->app->bind('analytics', function() use ($app) {
+
             $gClient = $this->app->make('GoogleClient');
             $analytics = new Google_Service_Analytics($gClient);
             return $analytics;

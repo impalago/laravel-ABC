@@ -65,7 +65,6 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $user->name = $request->name;
-        $user->surname = $request->surname;
         $user->email = $request->email;
         $user->isActive = isset($request->isActive) ? 1 : 0;
         $user->save();
@@ -74,10 +73,6 @@ class UsersController extends Controller
             if ($userRole->role_id != $request->role) {
                 \DB::table('role_user')->where('user_id', $id)->update(array('role_id' => $request->role));
             }
-        } else {
-            \DB::table('role_user')->insert(
-                array('role_id' => $request->role, 'user_id' => $id)
-            );
         }
         return redirect(route('users.index'));
     }

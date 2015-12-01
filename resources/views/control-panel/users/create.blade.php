@@ -39,12 +39,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputSurname" class="col-md-2 control-label">Surname</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" placeholder="Surname" name="surname" value="{{ old('surname') }}" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="inputEmail" class="col-md-2 control-label">Email</label>
                                 <div class="col-md-10">
                                     <input type="email" class="form-control" placeholder="Email" name="email" value="" required >

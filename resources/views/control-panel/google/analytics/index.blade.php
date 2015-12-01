@@ -12,6 +12,15 @@
         </div>
     </div>
 
+    @if(isset($error))
+        <div class="alert alert-dismissable alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <ul class="list-group">
+                <li class="list-group-item">{{ $error }}</li>
+            </ul>
+        </div>
+    @endif
+
     <div class="panel-group" id="accounts">
         @if(isset($accounts))
             @foreach($accounts as $account)

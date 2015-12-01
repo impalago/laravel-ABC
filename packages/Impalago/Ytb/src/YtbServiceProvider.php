@@ -4,6 +4,7 @@ namespace Impalago\Ytb;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Session;
+use View;
 
 class YtbServiceProvider extends ServiceProvider
 {
@@ -23,7 +24,9 @@ class YtbServiceProvider extends ServiceProvider
 
         $this->app->bind('GoogleClient', function () {
             $gClient = new \Google_Client();
-            $gClient->setAccessToken(Session::get('token'));
+            if (Session::has('token')) {
+                $gClient->setAccessToken(Session::get('token'));
+            }
             return $gClient;
         });
 
@@ -38,6 +41,7 @@ class YtbServiceProvider extends ServiceProvider
     {
         $this->publishes([__DIR__ . '/../config/ytb.php' => config_path('ytb.php')], 'config');
         $this->loadViewsFrom(__DIR__ . '/../resources/view/', 'ytb');
+        View::composer('ytb::blocks.left-panel', 'Impalago\Ytb\Http\Composers\SubscriptionsComposer');
 
         require __DIR__ . '/Http/routes.php';
     }

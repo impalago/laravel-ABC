@@ -1,8 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 body {
     background: url(../img/body-bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Log In Style */
@@ -446,6 +452,15 @@ body {
     height: 100%;
     overflow: visible;
     background: RGBA(242, 244, 244, 0.9) url(../img/load.gif) no-repeat center center;
+}
+
+.home-screen .panel-heading{
+    background-color: #21618C !important;
+    font-size: 19px;
+}
+
+.home-screen .panel-body{
+    background-color: #E3EBF1 !important;
 }
 
 

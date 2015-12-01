@@ -10,8 +10,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
 use App\Provider;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -28,6 +28,8 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $redirectTo = '/control';
+
     public function __construct()
     {
         //$this->middleware('guest', ['except' => 'getLogout']);
@@ -43,7 +45,6 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'surname' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -59,7 +60,6 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'isActive' => isset($data['isActive']) ? 1 : 0,
@@ -88,7 +88,7 @@ class AuthController extends Controller
      */
     public function redirectPath()
     {
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/control';
     }
 
     /**
@@ -161,7 +161,7 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return redirect('/');
+        return redirect(route($provider.'.index'));
     }
 
     /**
