@@ -37,11 +37,13 @@ class UsersSeeder extends Seeder
             [
                 'name' => 'Owner',
                 'email' => 'owner@owner.com',
+                'isActive' => 1,
                 'password' => bcrypt('owner'),
             ],
             [
                 'name' => 'Demo user',
                 'email' => 'demo@demo.com',
+                'isActive' => 1,
                 'password' => bcrypt('demo'),
             ]
         ]);
