@@ -174,11 +174,31 @@ class AuthController extends Controller
      */
     private function findOrCreateUser($providerUser, $provider)
     {
+
         $providerId = $providerUser->getId();
+
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+            $authProvider = Provider::where('provider', $provider)
+                ->where('provider_id', $providerId)
+                ->where('user_id', $userId)->first();
+
+            if (!$authProvider) {
+                Provider::create([
+                    'user_id' => $userId,
+                    'provider' => $provider,
+                    'provider_id' => $providerId,
+                    'token' => $providerUser->token
+                ]);
+            }
+
+            return User::find($userId);
+        }
 
         $authProvider = Provider::where('provider', $provider)->where('provider_id', $providerId)->first();
 
-        if ($authProvider) {
+        if ($authProvider and !Auth::check()) {
+
             $authProvider->token = $providerUser->token;
             $authProvider->save();
             return User::find($authProvider['user_id']);
@@ -186,7 +206,7 @@ class AuthController extends Controller
 
         $user = User::find($authProvider['user_id']);
 
-        if ($user) {
+        if ($user or Auth::check()) {
             $userId = $user['id'];
         } else {
             $newUser = User::create([

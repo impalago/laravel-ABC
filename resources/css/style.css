@@ -463,5 +463,9 @@ body {
     background-color: #E3EBF1 !important;
 }
 
+.delete-post {
+    padding: 2px 20px;
+    margin: 0px 1px;
+}
 
 

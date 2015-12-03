@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 |
 */
-Route::group(['prefix' => 'youtube', 'namespace' => 'Impalago\Ytb\Http\Controllers', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'youtube', 'namespace' => 'Impalago\Ytb\Http\Controllers', 'middleware' => ['auth', 'acl:module_youtube']], function () {
 
     Route::get('/', ['as' => 'ytb.index', 'uses' => 'YoutubeController@index']);
     Route::get('/video/{id}', ['as' => 'ytb.video', 'uses' => 'YoutubeController@getVideo']);

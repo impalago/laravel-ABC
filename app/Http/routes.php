@@ -56,7 +56,7 @@ Route::group(['prefix' => 'control', 'middleware' => 'auth'], function () {
     | Users
     |--------------------------------------------------------------------------
     */
-    Route::group(['prefix' => 'users'], function () {
+    Route::group(['prefix' => 'users', 'middleware' => ['acl:edit_users']], function () {
         // List users
         Route::get('', ['as' => 'users.index', 'uses' => 'Users\UsersController@index']);
 
@@ -77,7 +77,7 @@ Route::group(['prefix' => 'control', 'middleware' => 'auth'], function () {
     | Settings
     |--------------------------------------------------------------------------
     */
-    Route::group(['prefix' => 'settings'], function () {
+    Route::group(['prefix' => 'settings', 'middleware' => ['acl:edit_settings']], function () {
         Route::get('/', ['as' => 'settings.index', 'uses' => 'Settings\SettingsController@index']);
 
         // User roles
@@ -107,7 +107,7 @@ Route::group(['prefix' => 'control', 'middleware' => 'auth'], function () {
     | Facebook
     |--------------------------------------------------------------------------
     */
-    Route::group(['prefix' => 'facebook'], function () {
+    Route::group(['prefix' => 'facebook', 'middleware' => ['acl:module_facebook']], function () {
         Route::get('', ['as' => 'facebook.index', 'uses' => 'Facebook\FacebookController@index']);
         Route::get('/page/{id}', ['as' => 'fb.page', 'uses' => 'Facebook\FacebookController@getPage']);
 
@@ -133,7 +133,7 @@ Route::group(['prefix' => 'control', 'middleware' => 'auth'], function () {
         | Google Analytics
         |--------------------------------------------------------------------------
         */
-        Route::group(['prefix' => 'analytics', 'middleware' => 'google'], function () {
+        Route::group(['prefix' => 'analytics', 'middleware' => ['google', 'acl:module_google_analytics']], function () {
             Route::get('', ['as' => 'ga.index', 'uses' => 'Google\GoogleAnalyticsController@index']);
             Route::get('account/{id}', ['as' => 'ga.account', 'uses' => 'Google\GoogleAnalyticsController@getAccount']);
             Route::get('account/{id}/webproperties/{idProperty}', ['as' => 'ga.property', 'uses' => 'Google\GoogleAnalyticsController@getWebProperty']);
