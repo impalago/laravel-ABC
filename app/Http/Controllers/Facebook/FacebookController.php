@@ -195,14 +195,16 @@ class FacebookController extends Controller
      * Delete post
      *
      * @param $id
+     * @param $page_token
      * @return \Illuminate\Http\RedirectResponse
      */
     public function deletePostPage($id, $page_token)
     {
         $fb = $this->fb->getSetting();
-        $fb->setDefaultAccessToken($this->providerInfo['token']);
+        $fb->setDefaultAccessToken($page_token);
+
         try {
-            $fb->delete('/' . $id, [], $page_token);
+            $fb->delete('/' . $id);
         } catch (FacebookResponseException $e) {
             Session::flash('flash_error', 'There was a general API error ' . $e->getCode() . ':' . $e->getMessage());
             return redirect()->back();
