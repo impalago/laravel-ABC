@@ -151,7 +151,6 @@ return [
         /*
          * Dev...
          */
-        Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         /*
          * My packages...
@@ -210,11 +209,6 @@ return [
         'Form'      => Illuminate\Html\FormFacade::class,
         'Html'      => Illuminate\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
-        /*
-         * Dev...
-         */
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
         /*
          * My packages...
