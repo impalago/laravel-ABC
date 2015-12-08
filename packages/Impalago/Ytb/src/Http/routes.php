@@ -16,6 +16,6 @@ Route::group(['prefix' => 'youtube', 'namespace' => 'Impalago\Ytb\Http\Controlle
 
     Route::get('/channel/{id}', ['as' => 'ytb.channel', 'uses' => 'YoutubeController@getChannelPlaylist']);
     Route::get('/playlist/{id}', ['as' => 'ytb.playlist', 'uses' => 'YoutubeController@getVideoPlaylist']);
-    Route::get('/load-subscriptions?page={pageToken}', ['as' => 'ytb.load-subscriptions', 'uses' => 'YoutubeController@getSubscriptionsPage']);
+    Route::get('/load-subscriptions/{pageToken}', ['as' => 'ytb.load-subscriptions', 'uses' => 'YoutubeController@getSubscriptionsPage']);
 
 });

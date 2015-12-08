@@ -449,17 +449,15 @@ $(function() {
 
 });
 $(function() {
-    $('.subscriptions-mode').on('click', function(e) {
+    $(document).on('click', '.subscriptions-mode', function(e) {
         e.preventDefault();
-
+        $('.show-more').html('<img src="/img/load.gif" style="width:30px;">');
         var pageToken = $(this).data('page-token');
-        alert(pageToken);
         $.ajax({
-            type: 'post',
-            url: '/youtube/load-subscriptions?page=' + pageToken,
-            dataType: 'json',
+            url: '/youtube/load-subscriptions/' + pageToken,
             success: function(data) {
-                console.log(data);
+                $('.show-more').remove();
+                $('.subscriptions').append(data);
             }
         });
     });

@@ -10,3 +10,9 @@
         </div>
     </div>
 @endforeach
+
+@if($subscriptions->getNextPageToken())
+    <div class="text-center show-more">
+        <a href="#" data-page-token="{{ $subscriptions->getNextPageToken() }}" class="btn btn-primary btn-xs subscriptions-mode">show more</a>
+    </div>
+@endif
