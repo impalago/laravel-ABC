@@ -98,5 +98,6 @@ class FacebookLoginController extends Controller {
     public function logout()
     {
         Session::forget('fb_access_token');
+        return redirect(route('facebook.index'));
     }
 }
