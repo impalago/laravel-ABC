@@ -103,3 +103,9 @@
 .playlists .panel-body img {
     width: 100%;
 }
+
+.video-description, .comments {
+    background: #ffffff;
+    margin: 15px 0;
+    padding: 10px 0;
+}
