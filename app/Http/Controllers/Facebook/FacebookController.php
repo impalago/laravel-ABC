@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers\Facebook;
 
-use App\Provider;
 use Facebook\Exceptions\FacebookResponseException;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Services\FacebookLogin;
+use App\Http\Services\FacebookService;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
 class FacebookController extends Controller
@@ -18,10 +15,9 @@ class FacebookController extends Controller
 
     protected $fb;
 
-    public function __construct(FacebookLogin $fb)
+    public function __construct(FacebookService $fb)
     {
         $this->fb = $fb;
-        $this->providerInfo = Provider::where('user_id', Auth::user()->id)->where('provider', 'facebook')->first();
     }
 
     /**
@@ -31,10 +27,10 @@ class FacebookController extends Controller
      */
     public function index()
     {
-        if ($this->listPages()) {
+        if (Session::has('fb_access_token')) {
             $pages = $this->listPages();
         } else {
-            return view('errors.auth', ['provider' => 'facebook']);
+            return redirect(route('facebook.login'));
         }
 
         return view('control-panel/facebook.index', ['pages' => $pages]);
@@ -48,9 +44,9 @@ class FacebookController extends Controller
     public function listPages()
     {
 
-        if (isset($this->providerInfo['token'])) {
+        if (Session::has('fb_access_token')) {
             $fb = $this->fb->getSetting();
-            $fb->setDefaultAccessToken($this->providerInfo['token']);
+            $fb->setDefaultAccessToken(Session::get('fb_access_token'));
         } else {
             return null;
         }
@@ -58,7 +54,7 @@ class FacebookController extends Controller
 
         $request = $fb->request(
             'GET',
-            '/' . $this->providerInfo['provider_id'] . '/accounts'
+            '/' . Session::get('fb_id') . '/accounts'
         );
         $response = $fb->getClient()->sendRequest($request);
         $graphObj = $response->getDecodedBody();
@@ -81,9 +77,9 @@ class FacebookController extends Controller
             return redirect()->route('auth.socialite', 'facebook');
         }
 
-        if ($this->providerInfo) {
+        if (Session::has('fb_access_token')) {
             $fb = $this->fb->getSetting();
-            $fb->setDefaultAccessToken($this->providerInfo['token']);
+            $fb->setDefaultAccessToken(Session::get('fb_access_token'));
         } else {
             return redirect()->route('auth.login');
         }
@@ -105,7 +101,7 @@ class FacebookController extends Controller
             ['fields' => 'id,message,attachments,created_time,from,link']
         );
         $graphObj = $request->getDecodedBody();
-        //dd($graphObj);
+
         foreach ($graphObj['data'] as $key => $post) {
             $pagePosts[$key]['message'] = isset($post['message']) ? $post['message'] : '';
             $pagePosts[$key]['from'] = isset($post['from']['name']) ? $post['from']['name'] : '';
@@ -148,14 +144,17 @@ class FacebookController extends Controller
         ]);
 
         $fb = $this->fb->getSetting();
-        $pageInfo = $fb->sendRequest(
-            'GET',
-            '/' . $request->page_id,
-            [
-                'fields' => 'access_token',
-                'access_token' => $this->providerInfo['token']
-            ]
-        );
+        if(Session::has('fb_access_token')) {
+            $pageInfo = $fb->sendRequest(
+                'GET',
+                '/' . $request->page_id,
+                [
+                    'fields' => 'access_token',
+                    'access_token' => Session::get('fb_access_token')
+                ]
+            );
+        }
+
         $pageToken = $pageInfo->getDecodedBody();
         $fb->setDefaultAccessToken($pageToken['access_token']);
         if (empty($request->image)) {
@@ -211,6 +210,4 @@ class FacebookController extends Controller
         }
         return redirect()->back();
     }
-
-
 }

@@ -53,14 +53,6 @@ class GoogleLogin
     }
 
     /**
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function logout()
-    {
-        Session::forget('token');
-    }
-
-    /**
      * @return string
      */
     public function getLoginUrl()

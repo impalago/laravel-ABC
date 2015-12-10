@@ -109,6 +109,10 @@ Route::group(['prefix' => 'control', 'middleware' => 'auth'], function () {
     */
     Route::group(['prefix' => 'facebook', 'middleware' => ['acl:module_facebook']], function () {
         Route::get('', ['as' => 'facebook.index', 'uses' => 'Facebook\FacebookController@index']);
+        Route::get('/login', ['as' => 'facebook.login', 'uses' => 'Facebook\FacebookLoginController@login']);
+        Route::get('/callback', ['as' => 'facebook.callback', 'uses' => 'Facebook\FacebookLoginController@callback']);
+        Route::get('/logout', ['as' => 'facebook.logout', 'uses' => 'Facebook\FacebookLoginController@logout']);
+
         Route::get('/page/{id}', ['as' => 'fb.page', 'uses' => 'Facebook\FacebookController@getPage']);
 
         Route::post('/page/create-post', ['as' => 'fb.create-post-page', 'uses' => 'Facebook\FacebookController@createPostPage']);
@@ -124,9 +128,9 @@ Route::group(['prefix' => 'control', 'middleware' => 'auth'], function () {
     Route::group(['prefix' => 'google'], function () {
 
         Route::get('', ['as' => 'google.index', 'uses' => 'Google\GoogleController@index']);
-        Route::get('/login', ['as' => 'google.login', 'uses' => 'Google\GoogleController@login']);
-        Route::get('/logout', ['as' => 'google.logout', 'uses' => 'Google\GoogleController@logout']);
-        Route::get('/callback', ['as' => 'google.callback', 'uses' => 'Google\GoogleController@callbackLogin']);
+        Route::get('/login', ['as' => 'google.login', 'uses' => 'Google\GoogleLoginController@login']);
+        Route::get('/logout', ['as' => 'google.logout', 'uses' => 'Google\GoogleLoginController@logout']);
+        Route::get('/callback', ['as' => 'google.callback', 'uses' => 'Google\GoogleLoginController@callback']);
 
         /*
         |--------------------------------------------------------------------------
