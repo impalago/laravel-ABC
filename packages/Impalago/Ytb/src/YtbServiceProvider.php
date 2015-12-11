@@ -41,7 +41,7 @@ class YtbServiceProvider extends ServiceProvider
     {
         $this->publishes([__DIR__ . '/../config/ytb.php' => config_path('ytb.php')], 'config');
         $this->loadViewsFrom(__DIR__ . '/../resources/view/', 'ytb');
-        View::composer('ytb::blocks.left-panel', 'Impalago\Ytb\Http\Composers\SubscriptionsComposer');
+        View::composer('*', 'Impalago\Ytb\Http\Composers\SubscriptionsComposer');
 
         require __DIR__ . '/Http/routes.php';
     }
