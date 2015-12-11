@@ -3,11 +3,13 @@ namespace Impalago\Ytb\Http\Composers;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Input;
+use Impalago\Ytb\Services\GoogleLogin;
 
 class SubscriptionsComposer {
 
-    public function __construct() {
+    public function __construct(GoogleLogin $gl) {
         $this->youtube = \App::make('youtube');
+        $this->google = $gl;
     }
 
     /**
@@ -19,17 +21,14 @@ class SubscriptionsComposer {
      */
     public function compose(View $view)
     {
-        $options = ['mine' => true, 'maxResults'=>'20'];
-        if (Input::has('page')) {
-            $options['pageToken'] = Input::get('page');
-        }
-        $subscriptions = $this->youtube->subscriptions->listSubscriptions('id, snippet', $options);
-        if($subscriptions) {
+        if ($this->google->isLoggedIn()) {
+            $options = ['mine' => true, 'maxResults'=>'20'];
+            if (Input::has('page')) {
+                $options['pageToken'] = Input::get('page');
+            }
+            $subscriptions = $this->youtube->subscriptions->listSubscriptions('id, snippet', $options);
             $view->with('subscriptions', $subscriptions);
-        } else {
-            return;
         }
-
     }
 
 }
