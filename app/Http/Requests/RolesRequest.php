@@ -25,7 +25,7 @@ class RolesRequest extends Request
     {
         return [
             'role_title' => 'required',
-            'role_slug' => 'required|min:3|unique:roles,role_slug,' . $this->segment(3)
+            'role_slug' => 'required|min:3|unique:roles,role_slug,' . $this->segment(4)
         ];
     }
 }
