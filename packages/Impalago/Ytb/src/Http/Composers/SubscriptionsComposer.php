@@ -24,7 +24,12 @@ class SubscriptionsComposer {
             $options['pageToken'] = Input::get('page');
         }
         $subscriptions = $this->youtube->subscriptions->listSubscriptions('id, snippet', $options);
-        $view->with('subscriptions', $subscriptions);
+        if($subscriptions) {
+            $view->with('subscriptions', $subscriptions);
+        } else {
+            return;
+        }
+
     }
 
 }
