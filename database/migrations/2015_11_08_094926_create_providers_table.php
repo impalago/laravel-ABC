@@ -14,13 +14,16 @@ class CreateProvidersTable extends Migration
     {
         Schema::create('providers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
             $table->string('provider');
             $table->string('provider_id');
             $table->text('token');
             $table->softDeletes();
             $table->timestamps();
+        });
+
+        Schema::table('providers', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
